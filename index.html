@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCM Enterprise LLC | Bookkeeping & Financial Statement Analysis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #1a3a5c;
+            --primary-blue: #2d5a87;
+            --primary-light: #4a7fb5;
+            --accent-sky: #6ba3d6;
+            --cream: #f8f6f3;
+            --warm-white: #fdfcfa;
+            --text-dark: #2c3e50;
+            --text-muted: #5a6c7d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            font-weight: 300;
+            color: var(--text-dark);
+            background: var(--warm-white);
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(26, 58, 92, 0.15);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .contact-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .contact-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(160deg, var(--primary-dark) 0%, var(--primary-blue) 50%, var(--primary-light) 100%);
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 500;
+            color: white;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--accent-sky);
+            margin: 0 auto 2rem;
+            opacity: 0.8;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--cream);
+        }
+
+        .services-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--warm-white);
+            padding: 2.5rem 2rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(26, 58, 92, 0.06);
+            transition: all 0.4s ease;
+            border-top: 3px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(26, 58, 92, 0.1);
+            border-top-color: var(--primary-light);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Partnership Section */
+        .partnership {
+            padding: 5rem 2rem;
+            background: var(--warm-white);
+        }
+
+        .partnership-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .partnership-content h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+            margin-bottom: 1.25rem;
+        }
+
+        .partnership-content p {
+            color: var(--text-muted);
+            margin-bottom: 1.75rem;
+        }
+
+        .partnership-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        .partnership-link:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(45, 90, 135, 0.3);
+        }
+
+        .partnership-link svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+            transition: transform 0.3s ease;
+        }
+
+        .partnership-link:hover svg {
+            transform: translateX(4px);
+        }
+
+        .partnership-visual {
+            background: linear-gradient(135deg, var(--cream) 0%, rgba(107, 163, 214, 0.1) 100%);
+            padding: 3rem;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid rgba(45, 90, 135, 0.1);
+        }
+
+        .partnership-visual .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .partnership-visual svg {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .partnership-visual h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: white;
+            font-size: 1.05rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+
+        .contact-item svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--accent-sky);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .partnership-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .partnership-visual {
+                order: -1;
+            }
+
+            .hero {
+                min-height: 60vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">GCM Enterprise <span>LLC</span></div>
+            <a href="mailto:graham@gcmenterprise.com" class="contact-btn">Get In Touch</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Clarity in Your Numbers</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-subtitle">
+                Professional bookkeeping and financial statement analysis to help business owners understand their finances, make informed decisions, and build lasting success.
+            </p>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="services-container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive financial services designed to give you a clear picture of your business performance.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 12h16M12 4v16"/></svg>
+                    </div>
+                    <h3>Bookkeeping</h3>
+                    <p>Accurate, timely recording of your financial transactions. We maintain organized records so you always know where your business stands.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 5-6"/></svg>
+                    </div>
+                    <h3>Financial Statement Analysis</h3>
+                    <p>Transform raw numbers into actionable insights. We analyze your statements to identify trends, opportunities, and areas for improvement.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                    </div>
+                    <h3>Monthly Reporting</h3>
+                    <p>Regular financial reports delivered on schedule, keeping you informed and prepared for strategic decisions throughout the year.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partnership">
+        <div class="partnership-container">
+            <div class="partnership-content">
+                <h2>Financial Planning Partnership</h2>
+                <p>Great bookkeeping is the foundation—but building real wealth requires a comprehensive plan. Through our partnership with Blue Legacy Advisors, business owners get access to professional financial planning services designed specifically for entrepreneurs ready to grow their personal wealth alongside their business.</p>
+                <a href="https://www.bluelegacyadvisors.com" target="_blank" rel="noopener noreferrer" class="partnership-link">
+                    Visit Blue Legacy Advisors
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="partnership-visual">
+                <div class="icon-wrapper">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                </div>
+                <h3>Your Legacy, Our Expertise</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2>Let's Talk</h2>
+            <p>Ready to bring clarity to your business finances? Reach out today.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                    <a href="mailto:graham@gcmenterprise.com">graham@gcmenterprise.com</a>
+                </div>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    <span>Graham Miller</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 GCM Enterprise LLC. All rights reserved.</p>
+    </footer>
+</body>
+</html>
