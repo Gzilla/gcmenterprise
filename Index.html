@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GCM Enterprise LLC | Bookkeeping & Financial Statement Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2744;
+      --navy-deep: #0f1a2e;
+      --slate: #2d3a4f;
+      --steel: #4a5568;
+      --warm-gray: #8a919c;
+      --light-gray: #e8eaed;
+      --off-white: #f5f6f8;
+      --white: #ffffff;
+      --accent: #3b7dd8;
+      --accent-soft: #e8f0fb;
+      --gold: #c9a84c;
+      --gold-soft: rgba(201, 168, 76, 0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: var(--slate);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(26, 39, 68, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.35rem;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+    .logo span { color: var(--gold); }
+
+    .nav-cta {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      padding: 0.55rem 1.4rem;
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .nav-cta:hover {
+      background: var(--gold);
+      color: var(--navy-deep);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--navy-deep);
+      position: relative;
+      overflow: hidden;
+      padding: 6rem 2rem 4rem;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 80%, rgba(59,125,216,0.08), transparent),
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(201,168,76,0.06), transparent);
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 720px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      padding: 0.4rem 1rem;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 2px;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 300;
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy-deep);
+      background: var(--gold);
+      text-decoration: none;
+      padding: 0.85rem 2.4rem;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .hero-cta:hover {
+      background: #d4b35a;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(201,168,76,0.25);
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      padding: 6rem 2rem;
+      background: var(--off-white);
+    }
+
+    .section-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      color: var(--navy);
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--warm-gray);
+      font-weight: 300;
+      max-width: 540px;
+      margin-bottom: 3.5rem;
+      line-height: 1.7;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      border-radius: 3px;
+      border: 1px solid var(--light-gray);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .service-card:hover {
+      border-color: rgba(201,168,76,0.3);
+      box-shadow: 0 12px 32px rgba(26,39,68,0.06);
+      transform: translateY(-2px);
+    }
+    .service-card:hover::before { opacity: 1; }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--gold-soft);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .service-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      font-weight: 400;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: var(--warm-gray);
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
+    /* ── WHO WE SERVE ── */
+    .audience {
+      padding: 6rem 2rem;
+      background: var(--navy-deep);
+    }
+
+    .audience .section-title { color: var(--white); }
+    .audience .section-subtitle { color: rgba(255,255,255,0.5); }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .audience-item {
+      padding: 1.75rem 1.5rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 3px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .audience-item:hover {
+      border-color: rgba(201,168,76,0.3);
+      background: rgba(201,168,76,0.04);
+    }
+
+    .audience-item .num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .audience-item p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      padding: 6rem 2rem;
+      background: var(--off-white);
+      text-align: center;
+    }
+
+    .contact-inner {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .contact-email {
+      display: inline-block;
+      font-size: 1.15rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+    .contact-email:hover { border-color: var(--accent); }
+
+    .contact-name {
+      font-size: 0.95rem;
+      color: var(--warm-gray);
+      font-weight: 300;
+      margin-top: 0.25rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-deep);
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .footer-brand span { color: var(--gold); }
+
+    .footer-disclosures {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-disclosures p {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-copyright {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.25);
+      font-weight: 300;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-content { animation: fadeUp 0.8s ease-out; }
+    .service-card:nth-child(1) { animation: fadeUp 0.6s ease-out 0.1s both; }
+    .service-card:nth-child(2) { animation: fadeUp 0.6s ease-out 0.2s both; }
+    .service-card:nth-child(3) { animation: fadeUp 0.6s ease-out 0.3s both; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .logo { font-size: 1.15rem; }
+      .nav-cta { font-size: 0.75rem; padding: 0.45rem 1rem; }
+      .services, .audience, .contact { padding: 4rem 1.25rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .audience-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">GCM <span>Enterprise</span></div>
+    <a href="mailto:graham@gcmenterprise.com" class="nav-cta">Get in Touch</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">Bookkeeping &amp; Financial Analysis</div>
+      <h1>Clarity in Your Numbers</h1>
+      <p>Professional bookkeeping and financial statement analysis to help business owners understand their finances, make informed decisions, and build lasting success.</p>
+      <a href="mailto:graham@gcmenterprise.com" class="hero-cta">Let's Talk</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="section-inner">
+      <div class="section-label">Our Services</div>
+      <h2 class="section-title">What We Do</h2>
+      <p class="section-subtitle">A clear picture of your business performance — so you can focus on running it.</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 10h16"/><path d="M10 4v16"/></svg>
+          </div>
+          <h3>Bookkeeping</h3>
+          <p>Accurate, timely recording of your financial transactions. We maintain organized records so you always know where your business stands.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 21H4V3"/><path d="M4 16l5-5 4 4 7-7"/></svg>
+          </div>
+          <h3>Financial Statement Analysis</h3>
+          <p>Transform raw numbers into actionable insights. We analyze your statements to identify trends, opportunities, and areas for improvement.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="M8 4V2"/><path d="M16 4V2"/></svg>
+          </div>
+          <h3>Monthly Reporting</h3>
+          <p>Regular financial reports delivered on schedule, keeping you informed and prepared for strategic decisions throughout the year.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE -->
+  <section class="audience">
+    <div class="section-inner">
+      <div class="section-label">Who We Serve</div>
+      <h2 class="section-title">Built for Growing Businesses</h2>
+      <p class="section-subtitle">We work with small and mid-size business owners who need reliable financial reporting and clear insight into their numbers.</p>
+
+      <div class="audience-grid">
+        <div class="audience-item">
+          <div class="num">$1M–$20M</div>
+          <p>Revenue-stage businesses ready for professional-grade financials</p>
+        </div>
+        <div class="audience-item">
+          <div class="num">Monthly</div>
+          <p>Consistent reporting cadence to keep decisions data-driven</p>
+        </div>
+        <div class="audience-item">
+          <div class="num">Tailored</div>
+          <p>Right-sized financial support that scales with your business</p>
+        </div>
+        <div class="audience-item">
+          <div class="num">Clarity</div>
+          <p>Financial statements you actually understand and use</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <div class="contact-inner">
+      <div class="section-label">Let's Talk</div>
+      <h2 class="section-title">Ready to Bring Clarity to Your Finances?</h2>
+      <p class="section-subtitle" style="margin-left:auto; margin-right:auto;">Reach out today. We'd love to learn about your business and see if we're a good fit.</p>
+      <a href="mailto:graham@gcmenterprise.com" class="contact-email">graham@gcmenterprise.com</a>
+      <p class="contact-name">Graham Miller</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">GCM <span>Enterprise</span> LLC</div>
+
+      <div class="footer-disclosures">
+        <p>Bookkeeping and financial statement analysis services are offered solely through GCM Enterprise LLC. GCM Enterprise LLC is not a registered investment adviser, broker-dealer, or insurance agency and does not provide investment advisory, securities, or insurance services.</p>
+
+        <p>GCM Enterprise LLC is not affiliated with, sponsored by, or endorsed by MassMutual, MML Investors Services, LLC, or any of their affiliates. Services provided by GCM Enterprise LLC are separate from and not supervised by any securities or insurance firm.</p>
+
+        <p>Graham Miller is separately licensed as a registered representative and may offer securities and investment advisory services through other entities. Those services are entirely separate from the bookkeeping and financial analysis services offered by GCM Enterprise LLC.</p>
+      </div>
+
+      <div class="footer-copyright">
+        &copy; 2025 GCM Enterprise LLC. All rights reserved. &nbsp;|&nbsp; Virginia Beach, VA
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
