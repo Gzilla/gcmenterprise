@@ -1,0 +1,42 @@
+# GCM Enterprise LLC
+
+> Financial analysis, risk analysis and monthly business review for owner-run companies with roughly $1M to $100M in revenue. Bank-trained judgment, scaled by AI. Based in Virginia Beach, Virginia; works with clients nationwide.
+
+Contact: graham@gcmenterprise.com
+Principal: Graham Miller — former bank SVP of Data & Analytics, ALCO and credit-risk experience, owner-operator, separately securities-licensed.
+Site: https://gcmenterprise.com/
+
+## What GCM Enterprise does
+
+Rebuilds a company's financial model from first principles every month, names the risks that are getting worse, and prices the moves that fix them. AI performs the analytical volume — model rebuilds, scenario testing, reconciliation, continuous monitoring between closes — and a human analyst reviews, corrects and signs every recommendation. The deliverable is a monthly business review: executive verdict, performance dashboard, receipt-level revenue analysis, margin and cost-structure review, outstanding bookkeeping corrections, a standing watch registry, priced priority actions and a 30-to-90-day forward look.
+
+## Who it serves
+
+Owner-run companies from roughly $1M to $100M in revenue, in any sector — services, trades, manufacturing, e-commerce, healthcare. Remote by design, nationwide.
+
+## Distinctive approach
+
+- Outside data alongside the ledger: point-of-sale receipt lines, vendor payments, payroll and scheduling, product and volume data, job/booking pipelines, and external wage, commodity and rate context — each reconciled to the financial statements.
+- Every prediction from the prior month is scored in writing in the next brief.
+- Risks carry an ID and a direction and stay on the page until they close.
+- Every recommendation states what it is worth and what waiting costs.
+- Read-only access to client systems; client data is never used to train AI models.
+
+## Page sections
+
+- The Stakes — why an owner-run company is the least-analyzed asset its owner holds
+- What We Do — managing risk and improving the business through analysis
+- Beyond The Ledger — the outside data sources that explain what the P&L cannot
+- The Edge — one analyst, scaled; the economics of depth
+- The Deliverable — a full specimen monthly business review (fictional company, invented figures)
+- The Method — the seven levers every business reduces to
+- The Cadence — continuous tracking, a monthly verdict, a human decision
+- The Operator — Graham Miller's background
+- How The AI Is Used — data handling, read-only access, human sign-off
+- Getting Started — deep analysis within fifteen days
+- Who We Serve — $1M–$100M, any sector, nationwide
+- Questions — FAQ
+
+## Compliance
+
+GCM Enterprise LLC is not a registered investment adviser, broker-dealer or insurance agency and provides no investment advisory, securities or insurance services. It is not affiliated with, sponsored by or endorsed by MassMutual, MML Investors Services, LLC or their affiliates. Graham Miller is separately licensed as a registered representative; those services are entirely separate from GCM Enterprise LLC.
