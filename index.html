@@ -270,6 +270,10 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
 
 /* consent */
 #consent{position:fixed;left:0;right:0;bottom:0;z-index:60;min-height:64px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;padding:12px var(--pad);background:rgba(13,17,21,.97);border-top:1px solid rgba(201,161,92,.3);font-family:var(--mono);font-size:12px;line-height:1.5;color:var(--mute-d2)}
+/* must outrank the #consent display:flex above, or the hidden attribute
+   (which only works via the UA stylesheet) is ignored and the bar never
+   dismisses — including for visitors who already consented */
+#consent[hidden]{display:none}
 #consent p{max-width:70ch}
 #consent button{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;background:var(--brass);color:var(--ink);border:0;padding:11px 22px;border-radius:2px;cursor:pointer}
 #consent button:hover{background:#e6c288}
