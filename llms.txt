@@ -1,6 +1,6 @@
 # GCM Enterprise LLC
 
-> Financial analysis, risk analysis and monthly business review for owner-run companies with roughly $1M to $100M in revenue. Bank-trained judgment, scaled by AI. Based in Virginia Beach, Virginia; works with clients nationwide.
+> Financial analysis, risk analysis and monthly business review for owner-run companies with roughly $1M to $20M in revenue. Bank-trained judgment, scaled by AI. Based in Virginia Beach, Virginia; works with clients nationwide.
 
 Contact: graham@gcmenterprise.com
 Principal: Graham Miller — former bank SVP of Data & Analytics, ALCO and credit-risk experience, owner-operator, separately securities-licensed.
@@ -12,7 +12,7 @@ Rebuilds a company's financial model from first principles every month, names th
 
 ## Who it serves
 
-Owner-run companies from roughly $1M to $100M in revenue, in any sector — services, trades, manufacturing, e-commerce, healthcare. Remote by design, nationwide.
+Owner-run companies from roughly $1M to $20M in revenue, in any sector — services, trades, manufacturing, e-commerce, healthcare. Remote by design, nationwide.
 
 ## Distinctive approach
 
@@ -20,7 +20,7 @@ Owner-run companies from roughly $1M to $100M in revenue, in any sector — serv
 - Every prediction from the prior month is scored in writing in the next brief.
 - Risks carry an ID and a direction and stay on the page until they close.
 - Every recommendation states what it is worth and what waiting costs.
-- Read-only access to client systems; client data is never used to train AI models.
+- Access is matched to the engagement: read-only for analysis-only work; for bookkeeping engagements GCM records and adjusts entries in the client's accounting file. In every engagement GCM has no signature authority, never initiates or approves payments or transfers, and never holds client funds. Client data is never used to train AI models.
 
 ## Page sections
 
@@ -32,11 +32,11 @@ Owner-run companies from roughly $1M to $100M in revenue, in any sector — serv
 - The Method — the seven levers every business reduces to
 - The Cadence — continuous tracking, a monthly verdict, a human decision
 - The Operator — Graham Miller's background
-- How The AI Is Used — data handling, read-only access, human sign-off
+- How The AI Is Used — data handling, access matched to the engagement, human sign-off
 - Getting Started — deep analysis within fifteen days
-- Who We Serve — $1M–$100M, any sector, nationwide
+- Who We Serve — $1M–$20M, any sector, nationwide
 - Questions — FAQ
 
 ## Compliance
 
-GCM Enterprise LLC is not a registered investment adviser, broker-dealer or insurance agency and provides no investment advisory, securities or insurance services. It is not affiliated with, sponsored by or endorsed by MassMutual, MML Investors Services, LLC or their affiliates. Graham Miller is separately licensed as a registered representative; those services are entirely separate from GCM Enterprise LLC.
+GCM Enterprise LLC is not a registered investment adviser, broker-dealer or insurance agency and provides no investment advisory, securities or insurance services. Graham Miller is separately licensed as a registered representative and investment adviser representative of an unaffiliated broker-dealer and registered investment adviser; those services are entirely separate from GCM Enterprise LLC, which is not affiliated with, endorsed by, or supervised by any securities or insurance firm. GCM Enterprise LLC does not solicit securities, investment advisory, or insurance business, does not perform business valuations, and neither pays nor receives compensation for referrals of any kind.
