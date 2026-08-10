@@ -6,17 +6,25 @@
 
 <!--
   ============================================================
-  BEFORE DEPLOY — one placeholder left:
-    REPLACE_GA4_ID   GA4 measurement ID, e.g. G-XXXXXXXXXX  — 2 occurrences
-  Then uncomment the analytics block in the <script> at the bottom of <body>.
-  Booking link is live: https://calendly.com/grahammiller
-  No phone number on this page by choice — email and Calendly are the only contact paths.
-  Also upload to the repo root: og-image.png, favicon.png, graham-web.jpg
+  SOURCE OF TRUTH: github.com/Gzilla/gcmenterprise
+  The Claude Design project is a mockup surface only. Anything edited
+  there must be pushed to the repo or it will not go live.
+
+  OUTSTANDING: REPLACE_GA4_ID (2 occurrences, near the end of the file).
+  Until a GA4 measurement ID is supplied, the analytics loader stays
+  commented out — which means the consent bar currently gates nothing.
+
+  Contact paths are email and Calendly only. No phone number by choice.
+
+  NOTE FOR TOOLING: keep literal tag names out of this comment. An
+  earlier version contained the word for a JS element, which made
+  naive "strip scripts then comments" pipelines swallow the whole
+  document and report a false-clean grep.
   ============================================================
 -->
 
 <title>Financial Analysis for $1M–$100M Businesses | GCM Enterprise</title>
-<meta name="description" content="GCM Enterprise gives owner-run companies the analysis public companies get: every lever modeled, every risk named, every month. Bank-trained judgment, scaled by AI. Virginia Beach, VA and nationwide." />
+<meta name="description" content="Bank-trained analysis, scaled by AI. Every lever modeled, every risk named, every month — signed by a human analyst. Virginia Beach, VA and nationwide." />
 <meta name="author" content="GCM Enterprise LLC" />
 <meta name="theme-color" content="#12161b" />
 <link rel="canonical" href="https://gcmenterprise.com/" />
