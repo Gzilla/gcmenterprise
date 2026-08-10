@@ -1,3 +1,26 @@
+# Retrieval crawlers — these are the agents that surface pages in AI-assisted
+# answers, as distinct from the training crawlers (GPTBot, ClaudeBot, CCBot,
+# Google-Extended), which are deliberately not named here.
+#
+# NOTE: these groups are declarative — "User-agent: *" below already allows
+# everything. But a named group makes that bot ignore "*" ENTIRELY, so any
+# Disallow added under "*" in future must be repeated in each group here.
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 User-agent: *
 Allow: /
 

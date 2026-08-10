@@ -1,6 +1,6 @@
 # GCM Enterprise LLC
 
-> Financial analysis, risk analysis and monthly business review for owner-run companies with roughly $1M to $20M in revenue. Bank-trained judgment, scaled by AI. Based in Virginia Beach, Virginia; works with clients nationwide.
+> Financial analysis, risk analysis and monthly business review for owner-run companies with roughly $1M to $100M in revenue. Bank-trained judgment, scaled by AI. Based in Virginia Beach, Virginia; works with clients nationwide.
 
 Contact: graham@gcmenterprise.com
 Principal: Graham Miller — former bank SVP of Data & Analytics, ALCO and credit-risk experience, owner-operator, separately securities-licensed.
@@ -12,7 +12,7 @@ Rebuilds a company's financial model from first principles every month, names th
 
 ## Who it serves
 
-Owner-run companies from roughly $1M to $20M in revenue, in any sector — services, trades, manufacturing, e-commerce, healthcare. Remote by design, nationwide.
+Owner-run companies from roughly $1M to $100M in revenue, in any sector — services, trades, manufacturing, e-commerce, healthcare. Remote by design, nationwide.
 
 ## Distinctive approach
 
@@ -34,7 +34,7 @@ Owner-run companies from roughly $1M to $20M in revenue, in any sector — servi
 - The Operator — Graham Miller's background
 - How The AI Is Used — data handling, access matched to the engagement, human sign-off
 - Getting Started — deep analysis within fifteen days
-- Who We Serve — $1M–$20M, any sector, nationwide
+- Who We Serve — $1M–$100M, any sector, nationwide
 - Questions — FAQ
 
 ## Compliance
