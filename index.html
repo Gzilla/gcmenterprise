@@ -10,9 +10,11 @@
   The Claude Design project is a mockup surface only. Anything edited
   there must be pushed to the repo or it will not go live.
 
-  OUTSTANDING: REPLACE_GA4_ID (2 occurrences, near the end of the file).
-  Until a GA4 measurement ID is supplied, the analytics loader stays
-  commented out — which means the consent bar currently gates nothing.
+  NO ANALYTICS AND NO COOKIES. The page sets nothing and loads no
+  third-party script, so it needs no consent notice — the earlier bar
+  announced a cookie that never existed. The data-ev attributes on the
+  booking and email links are inert markers kept so measurement can be
+  added later without re-editing the body.
 
   Contact paths are email and Calendly only. No phone number by choice.
 
@@ -276,15 +278,6 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
 .legal{margin-top:20px;max-width:96ch;font-family:var(--mono);font-size:12px;line-height:1.75;color:var(--mute-d2);display:flex;flex-direction:column;gap:11px}
 .legal .c{color:#8a929b}
 
-/* consent */
-#consent{position:fixed;left:0;right:0;bottom:0;z-index:60;min-height:64px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;padding:12px var(--pad);background:rgba(13,17,21,.97);border-top:1px solid rgba(201,161,92,.3);font-family:var(--mono);font-size:12px;line-height:1.5;color:var(--mute-d2)}
-/* must outrank the #consent display:flex above, or the hidden attribute
-   (which only works via the UA stylesheet) is ignored and the bar never
-   dismisses — including for visitors who already consented */
-#consent[hidden]{display:none}
-#consent p{max-width:70ch}
-#consent button{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;background:var(--brass);color:var(--ink);border:0;padding:11px 22px;border-radius:2px;cursor:pointer}
-#consent button:hover{background:#e6c288}
 
 /* motion */
 .rev{animation:rise .9s cubic-bezier(.22,.61,.36,1) both;animation-timeline:view();animation-range:entry 0% entry 62%}
@@ -305,7 +298,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
   @page{margin:14mm}
   html{scroll-behavior:auto}
   body{background:#fff;color:#000;font-size:10.5pt;line-height:1.45}
-  .hdr,#consent,.skip,.cta-row,.btn,.btn-o,.link-u,.strip,.teaser-go,.arr{display:none!important}
+  .hdr,.skip,.cta-row,.btn,.btn-o,.link-u,.strip,.teaser-go,.arr{display:none!important}
 
   /* flatten every branded surface to paper */
   section,.s-dark,.s-ink2,.s-black,.s-paper,.s-forest,footer,.doc,.teaser{
@@ -871,11 +864,6 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
   </div>
 </footer>
 
-<div id="consent" hidden="hidden">
-  <p>This site uses a single analytics cookie to count visits. No advertising, no tracking across other sites.</p>
-  <button type="button" id="consent-ok">OK</button>
-</div>
-
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://gcmenterprise.com/#gcm","name":"GCM Enterprise LLC","description":"Financial analysis, risk analysis and monthly business review for owner-run companies from $1M to $100M in revenue. Bookkeeping and monthly reporting also available.","url":"https://gcmenterprise.com/","email":"graham@gcmenterprise.com","image":"https://gcmenterprise.com/og-image.png","founder":{"@id":"https://gcmenterprise.com/#graham"},"address":{"@type":"PostalAddress","addressLocality":"Virginia Beach","addressRegion":"VA","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Virginia Beach","containedInPlace":{"@type":"State","name":"Virginia"}},{"@type":"Country","name":"United States"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Monthly financial analysis and business review"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Financial statement analysis"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Bookkeeping and monthly reporting"}}]}}
 </script>
@@ -886,40 +874,6 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you replace my bookkeeper or CPA?","acceptedAnswer":{"@type":"Answer","text":"No. They keep the record; we analyze it. We work from their output and usually make their job easier by catching problems before the close."}},{"@type":"Question","name":"What if my books are a mess?","acceptedAnswer":{"@type":"Answer","text":"Common. We will tell you inside the first week what is usable. If the record cannot support analysis yet, we can take the bookkeeping ourselves or work alongside your team to get it there."}},{"@type":"Question","name":"What do you need from me to start?","acceptedAnswer":{"@type":"Answer","text":"Access to your accounting file, the last twenty-four to thirty-six months of statements, and one conversation about how the business actually runs. For analysis-only engagements that access is read-only."}},{"@type":"Question","name":"What does the AI actually do?","acceptedAnswer":{"@type":"Answer","text":"Volume. It rebuilds the model, tests scenarios, reconciles the statements and watches every lever between closes. It does not decide. Every finding is reviewed, corrected and signed by a human analyst before it reaches you."}},{"@type":"Question","name":"Is my financial data used to train AI?","acceptedAnswer":{"@type":"Answer","text":"No. Your financials are used to analyze your business and for nothing else."}},{"@type":"Question","name":"How long is the commitment?","acceptedAnswer":{"@type":"Answer","text":"The first engagement produces a deep analysis within fifteen days and stands on its own. After that it is a month-to-month cadence."}},{"@type":"Question","name":"What size company is this for?","acceptedAnswer":{"@type":"Answer","text":"Owner-run companies from roughly $1M to $100M in revenue, in any sector."}},{"@type":"Question","name":"Is GCM Enterprise an investment adviser?","acceptedAnswer":{"@type":"Answer","text":"No. GCM Enterprise LLC provides financial analysis, bookkeeping and reporting only. It is not a registered investment adviser, broker-dealer or insurance agency."}}]}
 </script>
 
-<script>
-/* Consent notice + conversion tracking. Content above needs none of this. */
-(function(){
-  var KEY='gcm-consent';
-  var bar=document.getElementById('consent');
-  var ok=document.getElementById('consent-ok');
-  var granted=null;
-  try{granted=localStorage.getItem(KEY);}catch(e){}
-  if(granted!=='yes'&&bar){bar.hidden=false;}
-  if(ok){ok.addEventListener('click',function(){
-    try{localStorage.setItem(KEY,'yes');}catch(e){}
-    bar.hidden=true;loadAnalytics();
-  });}
-  function loadAnalytics(){
-    /* REPLACE_GA4_ID — uncomment once you have the measurement ID
-    if(window.__ga)return;window.__ga=1;
-    var s=document.createElement('script');s.async=true;
-    s.src='https://www.googletagmanager.com/gtag/js?id=REPLACE_GA4_ID';
-    document.head.appendChild(s);
-    window.dataLayer=window.dataLayer||[];
-    window.gtag=function(){window.dataLayer.push(arguments);};
-    gtag('js',new Date());gtag('config','REPLACE_GA4_ID');
-    */
-  }
-  if(granted==='yes')loadAnalytics();
-  var names={booking:'booking_click',email:'email_click',phone:'phone_click'};
-  document.addEventListener('click',function(e){
-    var a=e.target.closest('[data-ev]');
-    if(!a)return;
-    var n=names[a.getAttribute('data-ev')];
-    if(n&&window.gtag)window.gtag('event',n,{link_url:a.href});
-  });
-})();
-</script>
 </body>
 </html>
 
