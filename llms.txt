@@ -25,6 +25,7 @@ Owner-run companies from roughly $1M to $100M in revenue, in any sector — serv
 ## Page sections
 
 - The Stakes — why an owner-run company is the least-analyzed asset its owner holds
+- Who We Serve — $1M–$100M, any sector, nationwide
 - What We Do — managing risk and improving the business through analysis
 - Beyond The Ledger — the outside data sources that explain what the P&L cannot
 - The Edge — one analyst, scaled; the economics of depth
@@ -34,7 +35,6 @@ Owner-run companies from roughly $1M to $100M in revenue, in any sector — serv
 - The Operator — Graham Miller's background
 - How The AI Is Used — data handling, access matched to the engagement, human sign-off
 - Getting Started — deep analysis within fifteen days
-- Who We Serve — $1M–$100M, any sector, nationwide
 - Questions — FAQ
 
 ## Compliance
