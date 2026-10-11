@@ -10,11 +10,14 @@
   The Claude Design project is a mockup surface only. Anything edited
   there must be pushed to the repo or it will not go live.
 
-  NO ANALYTICS AND NO COOKIES. The page sets nothing and loads no
-  third-party script, so it needs no consent notice — the earlier bar
-  announced a cookie that never existed. The data-ev attributes on the
-  booking and email links are inert markers kept so measurement can be
-  added later without re-editing the body.
+  ANALYTICS: Google Analytics 4, property G-VMT9JC91M1, loaded in the head.
+  This DOES set first-party cookies (_ga and _ga_*). There is currently
+  no consent notice on the page — the earlier bar was removed in Aug
+  2026 because at that time nothing set a cookie. That is no longer
+  true; see the owner note in the repo history.
+
+  The data-ev attributes on the booking and email links are wired to
+  booking_click / email_click events at the end of the body.
 
   Contact paths are email and Calendly only. No phone number by choice.
 
@@ -334,6 +337,16 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
   a[href^="mailto:"]::after{content:" (" attr(href) ")";font-size:8.5pt;color:#555}
 }
 </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VMT9JC91M1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VMT9JC91M1');
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -876,6 +889,21 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you replace my bookkeeper or CPA?","acceptedAnswer":{"@type":"Answer","text":"No. They keep the record; we analyze it. We work from their output and usually make their job easier by catching problems before the close."}},{"@type":"Question","name":"What if my books are a mess?","acceptedAnswer":{"@type":"Answer","text":"Common. We will tell you inside the first week what is usable. If the record cannot support analysis yet, we can take the bookkeeping ourselves or work alongside your team to get it there."}},{"@type":"Question","name":"What do you need from me to start?","acceptedAnswer":{"@type":"Answer","text":"Access to your accounting file, the last twenty-four to thirty-six months of statements, and one conversation about how the business actually runs. For analysis-only engagements that access is read-only."}},{"@type":"Question","name":"What does the AI actually do?","acceptedAnswer":{"@type":"Answer","text":"Volume. It rebuilds the model, tests scenarios, reconciles the statements and watches every lever between closes. It does not decide. Every finding is reviewed, corrected and signed by a human analyst before it reaches you."}},{"@type":"Question","name":"Is my financial data used to train AI?","acceptedAnswer":{"@type":"Answer","text":"No. Your financials are used to analyze your business and for nothing else."}},{"@type":"Question","name":"How long is the commitment?","acceptedAnswer":{"@type":"Answer","text":"The first engagement produces a deep analysis within fifteen days and stands on its own. After that it is a month-to-month cadence."}},{"@type":"Question","name":"What size company is this for?","acceptedAnswer":{"@type":"Answer","text":"Owner-run companies from roughly $1M to $100M in revenue, in any sector."}},{"@type":"Question","name":"Is GCM Enterprise an investment adviser?","acceptedAnswer":{"@type":"Answer","text":"No. GCM Enterprise LLC provides financial analysis, bookkeeping and reporting only. It is not a registered investment adviser, broker-dealer or insurance agency."}}]}
 </script>
 
+
+<script>
+/* Conversion hooks. The data-ev markers were left on the booking and
+   email links in Aug 2026 so measurement could be added without
+   re-editing the body. Fires only once gtag exists. */
+(function(){
+  var names={booking:'booking_click',email:'email_click'};
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('[data-ev]');
+    if(!a)return;
+    var n=names[a.getAttribute('data-ev')];
+    if(n&&window.gtag)window.gtag('event',n,{link_url:a.href});
+  });
+})();
+</script>
 </body>
 </html>
 
