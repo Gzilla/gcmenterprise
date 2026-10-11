@@ -189,6 +189,9 @@ h3{font-size:clamp(19px,2.1vw,28px);line-height:1.1}
 .photo img{width:100%;height:auto}
 .photo-cap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;max-width:420px;margin-top:12px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-lite)}
 .photo-cap span{color:rgba(239,231,216,.7)}
+.photo-link{max-width:420px;margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.photo-link a{color:var(--brass-lite);border-bottom:1px solid rgba(221,187,125,.45);padding-bottom:3px}
+.photo-link a:hover{color:var(--cream);border-bottom-color:var(--cream)}
 
 /* faq */
 .faq{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(20px,2.8vw,44px);margin-top:clamp(30px,4.4vw,52px)}
@@ -752,6 +755,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
     <div class="rev">
       <div class="photo"><img src="graham-web.jpg" width="760" height="950" alt="Graham Miller, GCM Enterprise LLC" loading="lazy" decoding="async" /></div>
       <p class="photo-cap"><b>Graham Miller</b><span>Virginia Beach, VA</span></p>
+      <p class="photo-link"><a href="https://www.linkedin.com/in/graham-miller-47987337/" target="_blank" rel="noopener noreferrer" data-ev="linkedin">View profile on LinkedIn ↗</a></p>
     </div>
   </div>
 </section>
@@ -897,7 +901,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
    email links in Aug 2026 so measurement could be added without
    re-editing the body. Fires only once gtag exists. */
 (function(){
-  var names={booking:'booking_click',email:'email_click'};
+  var names={booking:'booking_click',email:'email_click',linkedin:'linkedin_click'};
   document.addEventListener('click',function(e){
     var a=e.target.closest('[data-ev]');
     if(!a)return;
