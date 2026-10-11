@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!--
+  ============================================================
+  Booking confirmation page. Calendly redirects here after an event is
+  scheduled, so a pageview on this URL is the booking conversion.
+
+  NOINDEX IS LOAD-BEARING. If this page is indexed, people arrive
+  without booking and every one of them counts as a conversion. It is
+  deliberately left crawlable so the robots meta can actually be read -
+  blocking it in robots.txt would hide the noindex.
+
+  Not in sitemap.xml, by design.
+  ============================================================
+-->
+
+<title>Booking confirmed | GCM Enterprise</title>
+<meta name="robots" content="noindex,nofollow" />
+<meta name="description" content="Booking confirmation for a thirty-minute conversation with GCM Enterprise LLC." />
+<meta name="theme-color" content="#12161b" />
+<link rel="icon" href="/favicon.png" type="image/png" />
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" /></noscript>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VMT9JC91M1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VMT9JC91M1');
+</script>
+
+<style>
+:root{
+  --ink:#12161b; --black:#0d1115; --cream:#efe7d8; --brass:#c9a15c;
+  --brass-lite:#ddbb7d; --mute-d:#97a0a9; --mute-d2:#8d949c;
+  --serif:Fraunces,Georgia,"Times New Roman",serif;
+  --sans:Archivo,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --pad:clamp(24px,6vw,80px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:var(--cream);font-family:var(--sans);
+  font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;text-wrap:pretty;
+  min-height:100vh;display:flex;flex-direction:column}
+a{color:var(--brass);text-decoration:none}
+a:hover{color:#e6c288}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:2px}
+h1{font-family:var(--serif);font-weight:400;line-height:1.07;letter-spacing:-.018em;
+  font-size:clamp(31px,5vw,56px);max-width:16ch}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--brass);color:var(--ink);
+  padding:10px 16px;z-index:100;font-family:var(--mono);font-size:13px}
+.skip:focus{left:8px;top:8px}
+
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  padding:12px var(--pad);border-bottom:1px solid rgba(201,161,92,.2)}
+.logo{font-family:var(--serif);font-size:19px;color:var(--cream)}
+.logo span{color:var(--brass)}
+
+main{flex:1;display:flex;align-items:center;padding:clamp(48px,9vh,110px) var(--pad)}
+.wrap{max-width:1180px;margin:0 auto;width:100%}
+.eyebrow{display:flex;align-items:flex-start;gap:.8em;font-family:var(--mono);font-size:11.5px;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--brass);margin-bottom:1.5em;line-height:1.5}
+.eyebrow::before{content:"";width:clamp(24px,3.4vw,44px);height:1px;background:currentColor;
+  opacity:.75;flex:none;margin-top:.65em}
+.lead{margin-top:1.15em;font-size:clamp(15px,1.4vw,19px);line-height:1.6;color:var(--mute-d);max-width:56ch}
+.next{margin-top:clamp(26px,3.4vw,40px);padding-top:1.3em;border-top:1px solid rgba(201,161,92,.24);
+  font-size:15px;line-height:1.6;color:var(--mute-d);max-width:56ch}
+.next b{color:var(--cream);font-weight:500}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:clamp(24px,3.4vw,38px)}
+.link-u{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--mute-d);border-bottom:1px solid rgba(201,161,92,.45);padding-bottom:3px}
+.link-u:hover{color:var(--brass)}
+
+footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);
+  border-top:1px solid rgba(201,161,92,.2)}
+.legal{margin-top:0;max-width:96ch;font-family:var(--mono);font-size:12px;line-height:1.75;
+  color:var(--mute-d2);display:flex;flex-direction:column;gap:11px}
+.legal .c{color:#8a929b}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <a class="logo" href="/">GCM <span>Enterprise</span></a>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <p class="eyebrow">Booked</p>
+    <h1>You&rsquo;re on the calendar.</h1>
+    <p class="lead">A confirmation is on its way to your inbox with the time and the meeting link. Nothing further is needed before we talk.</p>
+    <p class="next">If you&rsquo;d like the conversation to start further along, reply to that confirmation with three things: <b>your industry</b>, <b>roughly what you do in revenue</b>, and <b>the question that keeps coming back</b>. Not required &mdash; it just means we spend the thirty minutes on your numbers rather than on background.</p>
+    <div class="cta-row">
+      <a class="link-u" href="/">&larr; Back to the site</a>
+      <a class="link-u" href="/#brief">Read the specimen brief</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="legal">
+      <p>Financial analysis, bookkeeping and financial statement analysis services are offered solely through GCM Enterprise LLC. GCM Enterprise LLC is not a registered investment adviser, broker-dealer, insurance agency, or certified public accounting firm, and does not provide investment advisory, securities, insurance, tax, legal, audit, review, compilation, or attestation services. The monthly business review, the specimen brief and the financial statement analysis described on this page are management information prepared for the owner's internal decision-making. They are not an audit, review, compilation or attestation engagement performed under AICPA standards, and they express no opinion or assurance on any financial statement.</p>
+      <p>Graham Miller is separately licensed as a registered representative and investment adviser representative of an unaffiliated broker-dealer and registered investment adviser. Those services are entirely separate from the bookkeeping and financial analysis services offered by GCM Enterprise LLC, which are not affiliated with, endorsed by, or supervised by any securities or insurance firm.</p>
+      <p>GCM Enterprise LLC does not solicit securities, investment advisory, or insurance business, does not perform business valuations, and neither pays nor receives compensation for referrals of any kind.</p>
+      <p>The specimen monthly business review shown on this page is a fictional company with invented figures, prepared for illustration. Analysis, models and projections are estimates based on stated assumptions and information provided; they are not guarantees of future results. Nothing on this page is an offer, solicitation, or recommendation.</p>
+      <p>This site uses Google Analytics to measure how it is found and used. It sets first-party cookies in your browser for that purpose. GCM Enterprise LLC does not sell visitor data or share it for cross-site advertising.</p>
+      <p class="c">© 2026 GCM Enterprise LLC. All rights reserved.&nbsp;|&nbsp;Virginia Beach, VA</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* The pageview is the conversion; this names it explicitly so it can be
+   marked as a key event and used as the Google Ads conversion. */
+if(window.gtag)window.gtag('event','booking_complete',{method:'calendly'});
+</script>
+</body>
+</html>
