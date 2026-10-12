@@ -29,14 +29,14 @@
 -->
 
 <title>Financial Analysis for $1M–$100M Businesses | GCM Enterprise</title>
-<meta name="description" content="Bank-trained analysis, scaled by AI. Every lever modeled, every risk named, every month — signed by a human analyst. Virginia Beach, VA and nationwide." />
+<meta name="description" content="The analysis a fractional CFO would run, for owner-run companies doing $1M–$100M: model rebuilt, risks named, recommendations priced, signed by Graham Miller. Virginia Beach, VA." />
 <meta name="author" content="GCM Enterprise LLC" />
 <meta name="theme-color" content="#12161b" />
 <link rel="canonical" href="https://gcmenterprise.com/" />
 <meta name="google-site-verification" content="H785eAybicgAlAzw5sZTJd_n26XOVqTxxHIFw_8jsS4" />
 
-<meta property="og:title" content="GCM Enterprise LLC | Bank-trained analysis, scaled by AI" />
-<meta property="og:description" content="The analysis public companies get, for owner-run companies. Every lever modeled, every risk named, every month." />
+<meta property="og:title" content="GCM Enterprise LLC | Bank-trained analysis, every month" />
+<meta property="og:description" content="The monthly analysis a fractional CFO would run, without hiring one. Risks named, recommendations priced, signed by Graham Miller." />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="GCM Enterprise LLC" />
@@ -45,8 +45,8 @@
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="GCM Enterprise LLC | Bank-trained analysis, scaled by AI" />
-<meta name="twitter:description" content="The analysis public companies get, for owner-run companies. Every lever modeled, every risk named, every month." />
+<meta name="twitter:title" content="GCM Enterprise LLC | Bank-trained analysis, every month" />
+<meta name="twitter:description" content="The monthly analysis a fractional CFO would run, without hiring one. Risks named, recommendations priced, signed by Graham Miller." />
 <meta name="twitter:image" content="https://gcmenterprise.com/og-image.png" />
 <link rel="icon" href="/favicon.png" type="image/png" />
 <link rel="apple-touch-icon" href="/favicon.png" />
@@ -293,12 +293,21 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
 @media (prefers-reduced-motion:reduce){.rev{animation:none}html{scroll-behavior:auto}}
 @media (max-width:640px){
   .nav{gap:10px;font-size:10.5px}
+  .nav a:not(.btn-o){display:none}
   .cred{grid-template-columns:1fr}
   .flow .arr{flex:0 0 100%;align-self:center;transform:rotate(90deg);padding:2px 0}
 }
 
 /* ── print — the specimen brief is what prospects actually print ── */
+/* folded back half of the specimen brief (2026-10-12) */
+.doc-more{margin-top:26px}
+.doc-more>summary{cursor:pointer;list-style:none;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-ink);border-top:1px solid rgba(18,22,27,.18);padding-top:16px}
+.doc-more>summary::-webkit-details-marker{display:none}
+.doc-more>summary::after{content:" ↓"}
+.doc-more[open]>summary::after{content:" ↑"}
+.svc h3 a{color:inherit;border-bottom:1px solid rgba(201,161,92,.5)}
 @media print{
+  details.doc-more>summary{display:none}
   /* scroll-driven .rev animations never advance without a viewport,
      and fill-mode:both would otherwise print them at opacity:0 */
   .rev{animation:none!important;opacity:1!important;transform:none!important}
@@ -372,20 +381,21 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
 <section id="top" class="s-dark glow-a">
   <div class="wrap hero">
     <div>
-      <p class="eyebrow rev">GCM Enterprise LLC · Financial Analysis</p>
-      <h1 class="rev">Bank-trained analysis, <em class="gold">scaled by AI.</em></h1>
-        <p class="hero-sub rev">For owner-run companies doing $1M&ndash;$100M: the monthly analysis an outsourced CFO would run, without hiring one.</p>
-      <p class="lead hero-lead rev">We analyze your business the way the market analyzes a public company — every lever modeled, every risk named, every month. Deep analysis in your hands within fifteen days.</p>
+      <p class="eyebrow rev">GCM Enterprise LLC · Monthly Business Review</p>
+      <h1 class="rev">Bank-trained analysis, <em class="gold">every month.</em></h1>
+        <p class="hero-sub rev">For owner-run companies doing $1M&ndash;$100M: the analysis a fractional or outsourced CFO would run, without hiring one.</p>
+      <p class="lead hero-lead rev">Each month I rebuild your financial model, track the risks, show where cash is heading and price each recommendation in dollars. First deep analysis within 15 days of read-only access.</p>
       <div class="cta-row rev">
-        <a class="btn" href="https://calendly.com/grahammiller/consultation" data-ev="booking">Ask what we'd find in your numbers</a>
+        <a class="btn" href="https://calendly.com/grahammiller/consultation" data-ev="booking">Book a 30-minute call</a>
         <a class="link-u" href="#brief">See a specimen brief ↓</a>
+        <span class="cta-note">30 minutes · what I'd look at first in your numbers, whether your books are ready, and how the fixed fee is set</span>
       </div>
-      <p class="strip rev">Fortune 50 discipline&nbsp;·&nbsp;for the Fortune 1,000,000</p>
+      <p class="strip rev">Signed by Graham Miller, former bank SVP&nbsp;·&nbsp;Typically $1,000–$3,000 a month, fixed&nbsp;·&nbsp;Month to month</p>
     </div>
     <div class="rev">
       <a class="teaser" href="#brief">
         <span class="teaser-hd"><b>Bluestone Creamery &amp; Coffee</b><span>Specimen</span></span>
-        <span class="teaser-sub">Monthly Business Review · June 2026</span>
+        <span class="teaser-sub">Monthly Business Review · June 2026 · Café example; same brief in any sector</span>
         <span class="teaser-lbl">What the receipts showed</span>
         <table>
           <tbody>
@@ -400,30 +410,14 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
   </div>
 </section>
 
-<section class="s-paper glow-b">
-  <div class="wrap">
-    <div class="rev">
-      <p class="eyebrow">The Stakes</p>
-      <h2>The most under-analyzed asset you own is the one you run.</h2>
-      <p class="lead">Public companies get armies of analysts watching every lever. Your company — likely the largest asset you'll ever hold — gets a backward-looking P&amp;L and a tax return. Risk shows up late, and improvement happens by accident.</p>
-    </div>
-    <div class="g3 rev">
-      <p class="stat"><b>No. 1</b><span>For most owners, the business is the single largest asset they will ever hold.</span></p>
-      <p class="stat"><b>0</b><span>Analysts covering it the way the market covers a public company.</span></p>
-      <p class="stat"><b>12×</b><span>A year, decisions of real consequence get made anyway — with or without the analysis.</span></p>
-    </div>
-    <p class="fine">Illustrative framing for discussion purposes.</p>
-  </div>
-</section>
-
 <section class="s-forest">
   <div class="wrap rev">
-    <p class="eyebrow">Who We Serve</p>
+    <p class="eyebrow">Who It's For</p>
     <h2>Built for owner-run companies with something to lose.</h2>
     <div class="g3">
       <p class="stat"><b>$1M–$100M</b><span>Owner-run companies, from businesses ready for professional-grade financials to those large enough to need real analysis.</span></p>
       <p class="stat"><b>Any sector</b><span>Services, trades, manufacturing, e-commerce, healthcare. The levers are universal; only the dials change.</span></p>
-      <p class="stat"><b>Nationwide</b><span>Based in Virginia Beach, Virginia. The work is remote by design and the cadence is identical anywhere.</span></p>
+      <p class="stat"><b>Virginia &amp; nationwide</b><span>Based in Virginia Beach. Available to companies across Virginia, from Hampton Roads to Richmond and Northern Virginia, and nationwide. The work is remote by design.</span></p>
     </div>
   </div>
 </section>
@@ -431,9 +425,8 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
 <section id="what" class="s-dark">
   <div class="wrap">
     <div class="rev">
-      <p class="eyebrow">What We Do</p>
-      <h2>We manage risk and improve the business — through analysis.</h2>
-      <p class="lead">Every month we rebuild your financial model, name what's moving and why, price the moves in front of you, and tell you which risks are getting worse. Then we score our own calls in the next brief.</p>
+      <p class="eyebrow">What You Get</p>
+      <h2>I find the risks and price the improvements. You decide.</h2>
     </div>
     <div class="g3 rev">
       <div class="beat">
@@ -447,90 +440,77 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
         <p>Every recommendation carries the dollars it's worth and the cost of waiting, so priority stops being a matter of opinion.</p>
       </div>
       <div class="beat">
-        <p class="kicker">Where we sit</p>
-        <h3>The missing layer</h3>
-        <p>Between the people who keep your records and the decisions that actually move the business. Nobody else owns that ground.</p>
+        <p class="kicker">Where I sit</p>
+        <h3>Alongside your team</h3>
+        <p>Between the people who keep your records and the decisions that move the business. Your bookkeeper, controller and CPA stay; I work from what they produce.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="data" class="s-dark">
+<section id="start" class="s-paper">
   <div class="wrap">
     <div class="rev">
-      <p class="eyebrow">Beyond The Ledger</p>
-      <h2>Your accounting system knows the dollars. It doesn't know what happened.</h2>
-      <p class="lead">A P&amp;L can tell you revenue rose four percent. It cannot tell you that all of the increase came from adding one trading day while every comparable day declined. We bring the operational data in alongside the books and reconcile the two — then the answers stop being averages.</p>
+      <p class="eyebrow">Getting Started</p>
+      <h2>Deep analysis within 15 days.</h2>
+      <p class="lead">No long discovery phase and nothing to install. Read-only access to your accounting system is enough to start, and your first deep analysis arrives within 15 days of that access. If the books are behind, I tell you in the first week what's usable and what catching up would take.</p>
     </div>
     <div class="g3 rev">
-      <div class="card">
-        <p class="kicker">Point-of-sale receipts</p>
-        <h3>Line-item revenue</h3>
-        <p>Hundreds of thousands of receipt lines reconciled to the ledger: product mix, transaction counts, average ticket, day-part and day-of-week. Where a revenue number becomes a reason.</p>
+      <div class="beat">
+        <p class="kicker">Days 1–3</p>
+        <h3>Statements and one conversation</h3>
+        <p>Counting from the day read-only access to your accounting system is granted: two to three years of statements and one conversation about how the business runs. By the end of the first week you know what's usable.</p>
       </div>
-      <div class="card">
-        <p class="kicker">Vendor payments</p>
-        <h3>Cost, verified</h3>
-        <p>What actually left the bank for materials and supplies, checked against what the books recorded — so a sourcing win can be proven rather than asserted.</p>
+      <div class="beat">
+        <p class="kicker">Days 4–14</p>
+        <h3>I rebuild the model</h3>
+        <p>Your levers mapped, your engine modeled from first principles, and the leaks located.</p>
       </div>
-      <div class="card">
-        <p class="kicker">Payroll &amp; scheduling</p>
-        <h3>Hours against output</h3>
-        <p>Payroll cash and hours against orders produced. The difference between better scheduling and quietly losing people shows up here, and nowhere else.</p>
+      <div class="beat">
+        <p class="kicker">Day 15</p>
+        <h3>Your first deep analysis</h3>
+        <p>What's working, what's leaking, where cash is heading over the next 90 days, the risks that need a name, and the first recommendations, priced in dollars.</p>
       </div>
-      <div class="card">
-        <p class="kicker">Product &amp; volume</p>
-        <h3>Per-unit truth</h3>
-        <p>Units sold by product against what each one costs to make and serve — so price moves, menu cuts and mix shifts carry real numbers instead of instinct.</p>
-      </div>
-      <div class="card">
-        <p class="kicker">Jobs, bookings, pipeline</p>
-        <h3>Forward demand</h3>
-        <p>Backlog, win rates, unbilled work and job-level yield from the systems your crews already use — the leading indicators a P&amp;L structurally cannot see.</p>
-      </div>
-      <div class="card card-f">
-        <p class="kicker">External context</p>
-        <h3>You vs your market</h3>
-        <p>Wage, commodity, rate and local demand data, so you know whether a soft month was you or the market — and can price accordingly.</p>
+      <div class="beat" style="border-top-color:#2c4a3d">
+        <p class="kicker" style="color:#2c4a3d">Then monthly</p>
+        <h3>The standing cadence</h3>
+        <p>After each close: a brief on what moved and why, risks tracked until they close, each recommendation priced, and last month's checked against what happened. Then we meet, I tell you what I'd actually do, and you decide.</p>
       </div>
     </div>
-    <p class="pull rule-t rev">Nearly all of this data already sits in systems you pay for every month. <em class="gold">Almost nobody connects it to the financials.</em></p>
+    <div class="cta-row rev">
+      <a class="btn" href="https://calendly.com/grahammiller/consultation" data-ev="booking">Book a 30-minute call</a>
+      <span class="cta-note" style="color:#5c5342">Timeline is typical and varies with the state of the books.</span>
+    </div>
   </div>
 </section>
 
-<section class="s-paper">
-  <div class="wrap">
+<section id="operator" class="s-forest glow-b">
+  <div class="wrap op-grid">
     <div class="rev">
-      <p class="eyebrow">The Edge</p>
-      <h2>One analyst used to be a ceiling. Now it's a floor.</h2>
-      <p class="lead">The bottleneck in real analysis has always been hours. One analyst can only rebuild so many models, test so many scenarios, read so many months of detail. AI removes that ceiling: the judgment stays human, volume stops being the constraint — and the cost of depth falls with it.</p>
+      <p class="eyebrow">The Operator</p>
+      <h2>Built in a bank. Sharpened by ownership.</h2>
+      <p class="lead">I do the analysis, sign every brief, and meet with you each month. GCM isn't a software product or a pool of junior analysts.</p>
+      <dl class="creds">
+        <div class="cred"><dt>Former bank SVP, Data &amp; Analytics</dt><dd>↳ led the function that turned institutional data into decisions</dd></div>
+        <div class="cred"><dt>ALCO &amp; Credit Risk</dt><dd>↳ balance-sheet, liquidity &amp; risk discipline at the committee level</dd></div>
+        <div class="cred"><dt>Owner-Operator</dt><dd>↳ I run this same playbook inside my own companies</dd></div>
+      </dl>
+      <p class="pull pull-i">Software does the arithmetic. The judgment comes from <b style="font-style:normal;color:var(--brass-lite)">someone who has carried the risk.</b></p>
     </div>
-    <div class="g3 rev">
-      <div class="card">
-        <p class="kicker">The analyst</p>
-        <h3>Bank-grade, not boilerplate</h3>
-        <p>Balance-sheet, credit and analytics discipline built inside a bank and sharpened by running companies. It sets the questions, reads the output, and stands behind the call.</p>
-      </div>
-      <div class="card">
-        <p class="kicker">The multiplier</p>
-        <h3>More ground than hand analysis covers</h3>
-        <p>Every lever modeled, every scenario tested, every month reconciled — coverage that simply is not practical by hand, running continuously in the background.</p>
-      </div>
-      <div class="card card-f">
-        <p class="kicker">The economics</p>
-        <h3>Priced for the company you run</h3>
-        <p>Analysis at a depth large companies staff departments for, priced to make sense at your size. The aim is plain: it should pay for itself out of what it finds.</p>
-      </div>
+    <div class="rev">
+      <div class="photo"><img src="graham-web.jpg" width="760" height="950" alt="Graham Miller, GCM Enterprise LLC" loading="lazy" decoding="async" /></div>
+      <p class="photo-cap"><b>Graham Miller</b><span>Virginia Beach, VA</span></p>
+      <p class="photo-link"><a href="https://www.linkedin.com/in/graham-miller-47987337/" target="_blank" rel="noopener noreferrer" data-ev="linkedin">View profile on LinkedIn ↗</a></p>
     </div>
-    <p class="fine">Scope, depth and pricing vary by engagement. Nothing here is a guarantee of a particular result.</p>
   </div>
 </section>
+
 <section id="brief" class="s-black">
   <div class="wrap">
     <div class="rev">
       <p class="eyebrow">The Deliverable</p>
       <h2>This is what lands on your desk.</h2>
-      <p class="lead">A real monthly review, rewritten for a fictional company. Every figure, name and finding below is invented — the structure and the depth are exactly what a client receives.</p>
+      <p class="lead">The format of a client monthly review, filled in for a fictional café. Every figure, name and finding below is invented; the structure and depth are what a client receives. For a manufacturer the same brief runs on product lines, inventory and plant capacity; for a contractor or services firm, on jobs, crews and backlog.</p>
     </div>
 
     <p class="doc-band">Specimen — fictional company, illustrative figures. Client briefs are confidential.</p>
@@ -544,7 +524,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
 
       <div class="doc-blk">
         <p class="doc-lbl">Executive Verdict</p>
-        <p>June was the strongest month in the company's recorded history, and the improvement behind it is real — but it is a different improvement than the headline suggests. Revenue of $114,240 ran slightly below June last year; profit roughly quadrupled. The engine is cost, not demand: prime cost — ingredients plus labor together — has fallen almost sixteen points of revenue against the first half of last year, verified independently against actual vendor payments and payroll cash rather than the accounting entries. Cash finished at $88,470, the highest in eighteen months and nearly double the March forecast.</p>
+        <p>June was the strongest month in the company's recorded history, and the improvement behind it is real — but it is a different improvement than the headline suggests. Revenue of $114,240 ran slightly below June last year; adjusted profit rose about three and a half times. The engine is cost, not demand: prime cost — ingredients plus labor together — has fallen almost sixteen points of revenue against the first half of last year, verified independently against actual vendor payments and payroll cash rather than the accounting entries. Cash finished at $88,470, the highest in eighteen months and nearly double the March forecast.</p>
         <p>Receipt-level analysis completed this month adds essential context on revenue. The year-to-date increase of 4.6% is a calendar effect: the store added Tuesday trading this year, worth $54,600, while revenue on comparable days fell 5.1%. Underneath, the mix is shifting — coffee is up 31% and growing every single month, while scoop transactions are down 16% at unchanged prices and the evening trade is eroding. The business is becoming a morning coffee-and-bakery café that also sells ice cream. That is not a problem — coffee is higher-margin and far less seasonal — but it should become a deliberate strategy, and it directly shapes what the second location is designed to be.</p>
         <p>Two things temper the month. Reported profit of $41,180 becomes roughly $31,500 after known bookkeeping corrections, and about $23,600 of merchandise stock sits on the balance sheet against sales that have largely stopped. Neither changes the direction; both need attention before the autumn.</p>
       </div>
@@ -557,9 +537,9 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
               <tr><th scope="col">Metric</th><th scope="col">Current</th><th scope="col">Prior period</th><th scope="col">Trend</th><th scope="col">Status</th></tr>
             </thead>
             <tbody>
-              <tr><td>Revenue (June)</td><td>$114,240</td><td class="p">$118,905</td><td class="p">−3.9% YoY</td><td><span class="chip chip-g">GREEN</span></td></tr>
+              <tr><td>Revenue (June)</td><td>$114,240</td><td class="p">$118,905</td><td class="p">−3.9% YoY</td><td><span class="chip chip-y">YELLOW</span></td></tr>
               <tr><td>Comparable-day sales (H1)</td><td class="dn">−5.1%</td><td class="p">—</td><td class="p">Declining</td><td><span class="chip chip-y">YELLOW</span></td></tr>
-              <tr><td>Gross margin (fees restored)</td><td>78.6%</td><td class="p">63.9%</td><td class="up">+14.7 pt</td><td><span class="chip chip-g">GREEN</span></td></tr>
+              <tr><td>Gross margin (June, fees restored)</td><td>74.5%</td><td class="p">63.9%</td><td class="up">+10.6 pt</td><td><span class="chip chip-g">GREEN</span></td></tr>
               <tr><td>Prime cost % (H1, adjusted)</td><td>56.4%</td><td class="p">72.1%</td><td class="up">−15.7 pt</td><td><span class="chip chip-g">GREEN</span></td></tr>
               <tr><td>Net income (June, adjusted)</td><td>$31,460</td><td class="p">$8,940</td><td class="up">~3.5×</td><td><span class="chip chip-g">GREEN</span></td></tr>
               <tr><td>Cash position</td><td>$88,470</td><td class="p">$71,300</td><td class="up">18-mo high</td><td><span class="chip chip-g">GREEN</span></td></tr>
@@ -592,21 +572,23 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
         <p><b>Why scoop traffic is down is the most important open question in the business</b> — competition, menu fatigue, pricing perception, or the same customers shifting spend to coffee and pastry. The data locates the decline precisely; it cannot explain it. It deserves an answer before the second location, which carries the ice cream brand, is committed.</p>
       </div>
 
+      <details class="doc-more">
+        <summary>Read the rest of the brief: margin, corrections, forward look</summary>
       <div class="doc-blk">
         <p class="doc-lbl">Margin — The Story Of The Year</p>
         <p class="doc-cap">Prime cost as % of revenue — trailing twelve months</p>
-        <div class="chart" role="img" aria-label="Prime cost as a percentage of revenue, trailing twelve months: July 2025 through December 2025 range from 68% to 74%, above the 60% caution line; January through June 2026 fall from 59% to 51%, below the 55% strong line.">
+        <div class="chart" role="img" aria-label="Prime cost as a percentage of revenue, trailing twelve months: July 2025 through December 2025 range from 68% to 74%, above the 60% caution line; January through June 2026 fall every month from 59% to 53%, all below the 60% caution line and reaching the 55% strong line in May.">
           <span class="thr thr-c"></span><span class="tl tl-c">60% CAUTION</span>
           <span class="thr thr-s"></span><span class="tl tl-s">55% STRONG</span>
           <span class="bars">
             <i class="b25" style="height:88.8%"></i><i class="b25" style="height:92.5%"></i><i class="b25" style="height:87.5%"></i>
             <i class="b25" style="height:85%"></i><i class="b25" style="height:91.3%"></i><i class="b25" style="height:86.3%"></i>
-            <i class="b26" style="height:73.8%"></i><i class="b26" style="height:72.5%"></i><i class="b26" style="height:71.3%"></i>
-            <i class="b26" style="height:68.8%"></i><i class="b26" style="height:66.3%"></i><i class="b26" style="height:63.8%"></i>
+            <i class="b26" style="height:73.8%"></i><i class="b26" style="height:73.1%"></i><i class="b26" style="height:72.5%"></i>
+            <i class="b26" style="height:71.3%"></i><i class="b26" style="height:68.8%"></i><i class="b26" style="height:66.3%"></i>
           </span>
         </div>
         <div class="xax"><span>JUL</span><span>AUG</span><span>SEP</span><span>OCT</span><span>NOV</span><span>DEC</span><span class="cur">JAN</span><span class="cur">FEB</span><span class="cur">MAR</span><span class="cur">APR</span><span class="cur">MAY</span><span class="cur">JUN</span></div>
-        <p>Prime cost — ingredients plus labor — is the standard measure of a food operation's engine room. Above 60% of revenue a concept struggles regardless of what else is done well; strong operators hold 55% or below. Bluestone spent most of 2025 above the caution line; every month of 2026 has been below it, with the trailing quarter near 51%. This near-sixteen-point improvement on flat comparable-day demand is why the same store that lost money in the first half of 2025 is solidly profitable now, and it is the foundation the second-location economics rest on.</p>
+        <p>Prime cost — ingredients plus labor — is the standard measure of a food operation's engine room. Above 60% of revenue a concept struggles regardless of what else is done well; strong operators hold 55% or below. Bluestone spent most of 2025 above the caution line; every month of 2026 has been below it, and it has fallen every month since January. This near-sixteen-point improvement on falling comparable-day demand is why the same store that lost money in the first half of 2025 is solidly profitable now, and it is the foundation the second-location economics rest on.</p>
         <p>Ingredient cost runs roughly ten points below prior year in every month, verified against actual vendor payments: the business paid $22,140 less for food and supplies this quarter than the same quarter last year, on slightly higher sales, through a deliberate shift from broadline distribution to direct and specialty suppliers. The improvement is structural, and conservatively stated — the books record more cost than the payments support.</p>
         <p><b>The payroll question, answered.</b> The labor line carries three posting distortions — August 2025 inflated by last year's accrual errors, October 2025 understated by $26,400 of wages parked below the operating line, and March–April 2026 tangled by accrual reversals. After adjusting all three, the improvement is genuine and independently confirmed: the point-of-sale system shows the same 27 employees processed 9% more orders while payroll cash fell about 15% — shorter shifts and better scheduling, not headcount cuts. The true 2026 labor run-rate is roughly 26–28% of revenue; planning should use that figure, not the flattered 20–23% the raw books show for May and June.</p>
         <div class="scroll">
@@ -616,8 +598,8 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
             </thead>
             <tbody>
               <tr><td>COGS % of revenue</td><td class="p">41.4%</td><td>29.8%</td><td class="up">−11.6 pt</td><td class="as">Structural — sourcing shift</td></tr>
-              <tr><td>Labor % of revenue</td><td class="p">31.6%</td><td>27.2%</td><td class="up">−4.4 pt</td><td class="as">Real — hours per order</td></tr>
-              <tr><td>Prime cost %</td><td class="p">72.1%</td><td>56.4%</td><td class="up">−15.7 pt</td><td class="as">Distressed to strong</td></tr>
+              <tr><td>Labor % of revenue</td><td class="p">30.7%</td><td>26.6%</td><td class="up">−4.1 pt</td><td class="as">Real — hours per order</td></tr>
+              <tr><td>Prime cost %</td><td class="p">72.1%</td><td>56.4%</td><td class="up">−15.7 pt</td><td class="as">Distressed to near-strong (line: 55%)</td></tr>
               <tr><td>Gross margin %</td><td class="p">58.6%</td><td>70.2%</td><td class="up">+11.6 pt</td><td class="as">Mirrors the COGS line</td></tr>
             </tbody>
           </table>
@@ -661,6 +643,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
           </table>
         </div>
       </div>
+      </details>
 
       <div class="doc-src">
         <p><b>Sources:</b> general ledger and statements (18 months); point-of-sale line-item data (226,400 receipt lines, reconciled to the ledger within 3%); vendor payment and payroll cash analysis. Comparable-day analysis excludes Tuesdays from both years. Adjustments stated in the margin section.</p>
@@ -672,12 +655,12 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
       <div><h3>The number behind the number</h3><p>Reported growth decomposed into a calendar effect and a real decline. An average hides that. Receipts don't.</p></div>
       <div><h3>Verified against cash</h3><p>Margin gains checked against actual vendor payments and payroll cash — not just the entries in the books.</p></div>
       <div><h3>Recording vs trading</h3><p>Bookkeeping problems separated from real performance, each with its profit effect priced and a date to fix it.</p></div>
-      <div><h3>Every source named</h3><p>What was analyzed, how many lines, and how closely it reconciles. You can check the work.</p></div>
+      <div><h3>Every number traceable</h3><p>Each figure traces to a named source: what was analyzed, how many lines, and how closely it reconciles to the ledger. You can check the work.</p></div>
     </div>
 
     <div class="cta-row rev">
-      <a class="btn" href="https://calendly.com/grahammiller/consultation" data-ev="booking">Ask what we'd find in your numbers</a>
-      <span class="cta-note">Thirty minutes · No obligation</span>
+      <a class="btn" href="https://calendly.com/grahammiller/consultation" data-ev="booking">Book a 30-minute call</a>
+      <span class="cta-note">Thirty minutes · No obligation · Typically $1,000–$3,000 a month, fixed</span>
     </div>
   </div>
 </section>
@@ -686,8 +669,8 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
   <div class="wrap">
     <div class="rev">
       <p class="eyebrow">The Method</p>
-      <h2>We break the business down to its levers.</h2>
-      <p class="lead">Most finance starts with last year's template. We start with the question underneath it: how does <em>this</em> business turn capital into cash? Strip the template away and every business reduces to the same machine — only the dials differ.</p>
+      <h2>I break the business down to its levers.</h2>
+      <p class="lead">Most finance starts with last year's template. I start with the question underneath it: how does <em>this</em> business turn capital into cash? Strip the template away and every business reduces to the same machine — only the dials differ.</p>
     </div>
     <div class="g4 rev">
       <div class="lever"><h3>Pricing</h3><p>What you charge, and how it flexes.</p></div>
@@ -700,121 +683,65 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
     </div>
     <p class="bar-note rev"><span>Move any lever</span><i>→</i><b>the model projects the impact</b><i>→</i><b>where you land in 6–12 months</b></p>
     <div class="split rev">
-      <p class="pull" style="margin-top:0">This is why we're business-type agnostic — and why a single point of margin, found once, tends to pay for the analysis many times over.</p>
-      <div class="cta-row" style="margin-top:0">
-        <a class="btn" href="https://calendly.com/grahammiller/consultation" data-ev="booking">Ask what we'd find in your numbers</a>
-        <a class="cta-note" href="mailto:graham@gcmenterprise.com?subject=Analysis%20inquiry&amp;body=Industry%3A%0D%0AAnnual%20revenue%3A%0D%0AWhat%20I%27d%20want%20the%20analysis%20to%20answer%20first%3A%0D%0A" data-ev="email">graham@gcmenterprise.com</a>
-      </div>
+      <p class="pull" style="margin-top:0">This is why the sector doesn't change the method. On $5M of revenue, one point of margin is $50,000 a year.</p>
     </div>
     <p class="fine">Projections are model estimates based on stated assumptions — not guarantees.</p>
   </div>
 </section>
 
-<section class="s-paper">
+<section id="data" class="s-ink2">
   <div class="wrap">
     <div class="rev">
-      <p class="eyebrow">The Cadence</p>
-      <h2>Continuous analysis. A monthly verdict.</h2>
+      <p class="eyebrow">Beyond The Ledger</p>
+      <h2>Your accounting system knows the dollars. It doesn't know what happened.</h2>
+      <p class="lead">A P&amp;L can tell you revenue rose 4.6%. It can't tell you an added trading day brought in more than the whole increase while sales on the days open in both years fell 5.1%. The work starts from your books. Where it helps answer a question, I add data from systems you already use and reconcile it to the ledger.</p>
     </div>
-    <div class="flow rev">
+    <div class="g4 rev">
       <div class="card">
-        <p class="kicker">All month</p>
-        <h3>The model tracks</h3>
-        <p>Every lever watched in the background — margin drift, cash conversion, unbilled work, concentration.</p>
+        <p class="kicker">Sales detail</p>
+        <h3>Line-item revenue</h3>
+        <p>Receipt, order or invoice lines from your point-of-sale system, online store or invoicing, reconciled to the ledger: product or job mix, transaction counts, average ticket, timing. Where a revenue number becomes a reason.</p>
       </div>
-      <p class="arr" aria-hidden="true">→</p>
       <div class="card">
-        <p class="kicker">At the close</p>
-        <h3>It resolves</h3>
-        <p>The signal becomes one brief: what moved, what it's worth, what's getting worse, and last month's calls scored.</p>
+        <p class="kicker">Vendor payments</p>
+        <h3>Cost, verified</h3>
+        <p>What actually left the bank for materials and supplies, checked against what the books recorded — so a sourcing win can be proven rather than asserted.</p>
       </div>
-      <p class="arr" aria-hidden="true">→</p>
-      <div class="card card-f">
-        <p class="kicker">Always</p>
-        <h3>A human decides</h3>
-        <p>Graham reads it, pressure-tests it, sits down with you, and tells you what he'd actually do.</p>
+      <div class="card">
+        <p class="kicker">Payroll &amp; scheduling</p>
+        <h3>Hours against output</h3>
+        <p>Payroll cash and hours against orders produced. The difference between better scheduling and quietly losing people shows up here.</p>
+      </div>
+      <div class="card">
+        <p class="kicker">Jobs, bookings, pipeline</p>
+        <h3>Forward demand</h3>
+        <p>Backlog, win rates, unbilled work and job-level yield from the systems your crews already use — the leading indicators a P&amp;L structurally cannot see. For an HVAC or trades company: job margin, technician hours against revenue, service-agreement revenue and the shoulder-season cash dip.</p>
+      </div>
+      <div class="card">
+        <p class="kicker">ERP &amp; inventory</p>
+        <h3>Cost, by product line</h3>
+        <p>Standard against actual cost, purchase-price and usage variances, inventory aging and work in progress from your ERP, reconciled to the ledger. Where a margin change becomes a product line, a supplier or a plant.</p>
       </div>
     </div>
-    <p class="pull pull-i rule-t rev">The machine does the work that is not practical by hand. A human makes sure it means something.</p>
-  </div>
-</section>
-
-<section id="operator" class="s-forest glow-b">
-  <div class="wrap op-grid">
-    <div class="rev">
-      <p class="eyebrow">The Operator</p>
-      <h2>Built in a bank. Sharpened by ownership.</h2>
-      <p class="lead">GCM isn't a software product or a junior analyst pool. It's bank-grade financial discipline, run by the person accountable for the call.</p>
-      <dl class="creds">
-        <div class="cred"><dt>Bank SVP, Data &amp; Analytics</dt><dd>↳ led the function that turned institutional data into decisions</dd></div>
-        <div class="cred"><dt>ALCO &amp; Credit Risk</dt><dd>↳ balance-sheet, liquidity &amp; risk discipline at the committee level</dd></div>
-        <div class="cred"><dt>Owner-Operator</dt><dd>↳ runs this same playbook inside his own companies</dd></div>
-        <div class="cred"><dt>Securities-Licensed</dt><dd>↳ held separately from GCM Enterprise LLC under an unaffiliated firm — see disclosures below</dd></div>
-      </dl>
-      <p class="pull pull-i">The AI does the heavy analysis. The judgment comes from <b style="font-style:normal;color:var(--brass-lite)">someone who has carried the risk.</b></p>
-    </div>
-    <div class="rev">
-      <div class="photo"><img src="graham-web.jpg" width="760" height="950" alt="Graham Miller, GCM Enterprise LLC" loading="lazy" decoding="async" /></div>
-      <p class="photo-cap"><b>Graham Miller</b><span>Virginia Beach, VA</span></p>
-      <p class="photo-link"><a href="https://www.linkedin.com/in/graham-miller-47987337/" target="_blank" rel="noopener noreferrer" data-ev="linkedin">View profile on LinkedIn ↗</a></p>
-    </div>
+    <p class="pull rule-t rev">Nearly all of this data already sits in systems you pay for every month. <em class="gold">It's added read-only or as a monthly export, and only where it answers a question.</em></p>
   </div>
 </section>
 
 <section class="s-dark">
   <div class="wrap">
     <div class="rev">
-      <p class="eyebrow">How The AI Is Used</p>
-      <h2>What we take, and what we don't.</h2>
-      <p class="lead">Handing your financials to anyone deserves a straight answer about what happens to them. Here is ours.</p>
+      <p class="eyebrow">Your Data &amp; The AI</p>
+      <h2>What I take, and what I don't.</h2>
+      <p class="lead">Handing your financials to anyone deserves a straight answer about what happens to them. Here is mine.</p>
     </div>
-    <div class="g3 rev">
-      <div class="trust"><h3>Access matched to the work</h3><p>For analysis-only engagements, access is read-only. Where we're engaged for bookkeeping, we record and adjust entries in your accounting file — that's the job. In every engagement, GCM never has signature authority on any account, never initiates or approves payments or transfers, and never holds client funds.</p></div>
-      <div class="trust"><h3>Your data trains nothing</h3><p>Your financials are used to analyze your business, and for nothing else.</p></div>
-      <div class="trust"><h3>The AI does volume, not judgment</h3><p>It rebuilds models, tests scenarios, reconciles statements and watches levers between closes. It never decides.</p></div>
-      <div class="trust"><h3>A human signs every brief</h3><p>Every finding is reviewed, corrected where needed, and stood behind by the analyst whose name is on it.</p></div>
+    <div class="g3 rev" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))">
+      <div class="trust"><h3>Access matched to the work</h3><p>For analysis-only engagements, access is read-only. Where I'm engaged for bookkeeping, I record and adjust entries in your accounting system — that's the job. In every engagement, GCM never has signature authority on any account, never initiates or approves payments or transfers, and never holds client funds.</p></div>
+      <div class="trust"><h3>Your data trains nothing</h3><p>Your financials are used to analyze your business and nothing else. The AI model runs under commercial terms that exclude training on your data.</p></div>
+      <div class="trust"><h3>Software calculates. AI drafts. I sign.</h3><p>Software rebuilds the model, reconciles the statements and runs the scenarios. An AI model drafts the written findings from those figures. It does no arithmetic, doesn't log into your accounts and decides nothing. I check every finding and sign the brief.</p></div>
       <div class="trust"><h3>Confidential by default</h3><p>Your numbers, your name, your strategy. Nothing published, nothing shared, no logo wall.</p></div>
-      <div class="trust"><h3>Your team stays in place</h3><p>We work from your bookkeeper's and CPA's output — and usually make their jobs easier.</p></div>
     </div>
   </div>
 </section>
-
-<section class="s-paper">
-  <div class="wrap">
-    <div class="rev">
-      <p class="eyebrow">Getting Started</p>
-      <h2>Deep analysis in fifteen days.</h2>
-      <p class="lead">No long discovery phase, nothing to install, nothing for your team to prepare. Access to your accounting file is enough to start — read-only for analysis engagements — and you have real analysis in hand inside of two weeks.</p>
-    </div>
-    <div class="g3 rev">
-      <div class="beat">
-        <p class="kicker">Days 1–3</p>
-        <h3>We take the books</h3>
-        <p>Access to your accounting file and the last two to three years of statements. Read-only where we're engaged for analysis only.</p>
-      </div>
-      <div class="beat">
-        <p class="kicker">Days 4–14</p>
-        <h3>We rebuild the model</h3>
-        <p>Your levers mapped, your engine modeled from first principles, and the leaks located.</p>
-      </div>
-      <div class="beat">
-        <p class="kicker">Day 15</p>
-        <h3>Your first deep analysis</h3>
-        <p>What's working, what's leaking, the risks that need a name, and the first moves — priced.</p>
-      </div>
-      <div class="beat" style="border-top-color:#2c4a3d">
-        <p class="kicker" style="color:#2c4a3d">Then monthly</p>
-        <h3>The standing cadence</h3>
-        <p>The brief, the scored calls, the watch registry, and the meeting that turns it into decisions.</p>
-      </div>
-    </div>
-    <div class="cta-row rev">
-      <a class="btn" href="https://calendly.com/grahammiller/consultation" data-ev="booking">Ask what we'd find in your numbers</a>
-      <span class="cta-note" style="color:#5c5342">Timeline is typical and varies with the state of the books.</span>
-    </div>
-  </div>
-</section>
-
 
 <section id="faq" class="s-paper">
   <div class="wrap">
@@ -824,17 +751,16 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
     </div>
     <div class="faq rev">
       <div class="faq-col">
-        <div><h3>Is this the same as hiring a fractional or outsourced CFO?</h3><p>We're not a CPA firm, and we don't take a seat on your leadership team. We keep your books if you need us to, and we analyze them to show where your company is heading, so you can manage it with clear numbers instead of guesswork. Every month we sit down with you and walk through what we found: what moved, what it's worth, and what to watch next. Your CPA keeps handling tax.</p></div>
-        <div><h3>Do you replace my bookkeeper or CPA?</h3><p>Your CPA stays. Tax and filings are theirs. Your bookkeeper can stay too; we'll work from their output. If you'd rather hand us the books, we'll keep them ourselves.</p></div>
-        <div><h3>What if my books are a mess?</h3><p>Common. We'll tell you inside the first week what's usable. If the record can't support analysis yet, we can take the bookkeeping ourselves or work alongside your team to get it there.</p></div>
-        <div><h3>What do you need from me to start?</h3><p>Access to your accounting file, the last twenty-four to thirty-six months of statements, and one conversation about how the business actually runs. For analysis-only engagements that access is read-only.</p></div>
-        <div><h3>What does the AI actually do?</h3><p>Volume. It rebuilds the model, tests scenarios, reconciles the statements and watches every lever between closes. It doesn't decide — every finding is reviewed, corrected and signed by a human analyst before it reaches you.</p></div>
+        <div><h3>Is this the same as hiring a fractional or outsourced CFO?</h3><p>No. A fractional or outsourced CFO joins your leadership team and runs finance: cash, banks, lenders, the finance staff. I don't, and I never move money or sign for the company. I run the analysis a good CFO would run: your model rebuilt each month, risks named and tracked, recommendations priced in dollars, and a monthly meeting where I tell you what I'd do. You make the calls. If you need someone to run finance, hire a CFO; this also works alongside one.</p></div>
+        <div><h3>Do you replace my bookkeeper, controller or CPA?</h3><p>No. Your CPA keeps tax and filings. Your bookkeeper or controller keeps the books and the monthly reporting; I take their close and model what comes next. I don't redo it: where a figure doesn't tie to bank, payroll or vendor payments, I list the item, its profit effect and the source, and they decide the entry. If you'd rather hand me the books, I can keep them.</p></div>
+        <div><h3>What if my books are a mess?</h3><p>Common. Within the first week I tell you what's usable. If the books can't support the analysis yet, I can keep them myself or work alongside your bookkeeper to catch them up, quoted separately, and I tell you when the 15 days start. The specimen brief on this page found bookkeeping corrections that cut year-to-date profit by a net $41,150, and kept them apart from real performance.</p></div>
+        <div><h3>What do I get from the 30-minute call?</h3><p>A plain read on what I'd look at first in your numbers, what read-only access it takes, and whether your books can support the analysis now or need catching up first. If it's a fit, I quote a fixed monthly fee after the call, typically $1,000 to $3,000 a month. Your first deep analysis arrives within 15 days of read-only access to books that can support it; if yours need catching up first, I tell you on the call when the 15 days start.</p></div>
+        <div><h3>What does the AI actually do?</h3><p>One job: it drafts the written findings from figures the software has already calculated. It doesn't do arithmetic, doesn't log into your accounts, and doesn't decide anything. I check every finding and sign the brief.</p></div>
       </div>
       <div class="faq-col">
-        <div><h3>Is my financial data used to train AI?</h3><p>No. Your financials are used to analyze your business and for nothing else.</p></div>
-        <div><h3>How long is the commitment?</h3><p>The first engagement produces a deep analysis within fifteen days and stands on its own. After that it's a month-to-month cadence — most of the value compounds, but nothing locks you in.</p></div>
+        <div><h3>Who sees our books, and what happens to the data?</h3><p>Me and the software, plus the AI provider that drafts findings from calculated figures. Analysis access is read-only and you can remove it at any time. Your data isn't used to train AI models: the model runs under commercial terms that exclude it.</p></div>
+        <div><h3>What does it cost, and how long is the commitment?</h3><p>A fixed monthly fee, typically $1,000 to $3,000 a month depending on the size of the business and what you want answered. I quote it after the call once I've seen the state of your books, and it's never a share of anything. Any catch-up bookkeeping is quoted separately. There's no long-term contract: you can stop after the first deep analysis and keep it; after that it's month to month, with no lock-in.</p></div>
         <div><h3>What size company is this for?</h3><p>Owner-run companies from roughly $1M to $100M in revenue, in any sector. Below that the analysis usually outruns the decisions it would inform.</p></div>
-        <div><h3>Is GCM Enterprise an investment adviser?</h3><p>No. GCM Enterprise LLC provides financial analysis, bookkeeping and reporting only. It isn't a registered investment adviser, broker-dealer or insurance agency — see the disclosures below.</p></div>
       </div>
     </div>
   </div>
@@ -844,11 +770,12 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
   <div class="wrap rev">
     <p class="eyebrow">Also Available</p>
     <div class="split" style="margin-top:0;align-items:start">
-      <h2 style="font-size:clamp(21px,2.5vw,32px);line-height:1.14;max-width:22ch">If the books aren't ready, we can take them too.</h2>
+      <h2 style="font-size:clamp(21px,2.5vw,32px);line-height:1.14;max-width:22ch">Books not ready? I can keep them. Spending on ads? I check them.</h2>
       <div style="display:flex;flex-direction:column;gap:14px">
-        <div class="svc"><p class="n">01</p><div><h3>Bookkeeping</h3><p>Accurate, timely recording of transactions — so the analysis has clean inputs to work from.</p></div></div>
+        <div class="svc"><p class="n">01</p><div><h3>Bookkeeping</h3><p>Catch-up and monthly bookkeeping: books brought current, then closed on time every month, so the analysis has clean inputs.</p></div></div>
         <div class="svc"><p class="n">02</p><div><h3>Monthly Reporting</h3><p>Financial statements delivered on schedule, in a format you actually read and use.</p></div></div>
         <div class="svc"><p class="n">03</p><div><h3>Financial Statement Analysis</h3><p>Trend, margin and cash-flow analysis of existing statements — a lighter engagement than the full model.</p></div></div>
+        <div class="svc"><p class="n">04</p><div><h3><a href="/marketing/">Marketing Verdict →</a></h3><p>For companies with real ad spend: what Google and Meta claim, checked each month against what your books show was sold and kept. Same read-only access, same signature. On its own or alongside the monthly review, for its own fixed fee.</p></div></div>
       </div>
     </div>
   </div>
@@ -858,9 +785,9 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
   <div class="wrap rev">
     <p class="eyebrow">Let's Talk</p>
     <h2 style="font-size:clamp(30px,4.8vw,68px);line-height:1.04;max-width:18ch">See what the analysis finds in your numbers.</h2>
-    <p class="lead" style="max-width:52ch">A thirty-minute conversation about your business and what you'd want the analysis to answer first. Tell me your industry, roughly what you do in revenue, and the question that keeps coming back.</p>
+    <p class="lead" style="max-width:52ch">Thirty minutes with me, Graham Miller. Tell me your industry, roughly what you do in revenue, and the question that keeps coming back. You leave knowing what I'd look at first in your numbers and whether your books can support the analysis now. If it's a fit, I quote a fixed monthly fee, typically $1,000 to $3,000 a month. Your first deep analysis arrives within 15 days of read-only access to books that can support it; if yours need catching up first, I tell you on the call when the 15 days start.</p>
     <div class="cta-row">
-      <a class="btn" href="https://calendly.com/grahammiller/consultation" data-ev="booking">Ask what we'd find in your numbers</a>
+      <a class="btn" href="https://calendly.com/grahammiller/consultation" data-ev="booking">Book a 30-minute call</a>
       <a class="link-u" href="mailto:graham@gcmenterprise.com?subject=Analysis%20inquiry&amp;body=Industry%3A%0D%0AAnnual%20revenue%3A%0D%0AWhat%20I%27d%20want%20the%20analysis%20to%20answer%20first%3A%0D%0A" data-ev="email">graham@gcmenterprise.com</a>
     </div>
     <p class="cta-note" style="margin-top:20px">Graham Miller&nbsp;·&nbsp;GCM Enterprise LLC&nbsp;·&nbsp;Virginia Beach, VA</p>
@@ -878,7 +805,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
       </p>
     </div>
     <div class="legal">
-      <p>Financial analysis, bookkeeping and financial statement analysis services are offered solely through GCM Enterprise LLC. GCM Enterprise LLC is not a registered investment adviser, broker-dealer, insurance agency, or certified public accounting firm, and does not provide investment advisory, securities, insurance, tax, legal, audit, review, compilation, or attestation services. The monthly business review, the specimen brief and the financial statement analysis described on this website are management information prepared for the owner's internal decision-making. They are not an audit, review, compilation or attestation engagement performed under AICPA standards, and they express no opinion or assurance on any financial statement.</p>
+      <p>Financial analysis, marketing analysis, bookkeeping and financial statement analysis services are offered solely through GCM Enterprise LLC. GCM Enterprise LLC is not a registered investment adviser, broker-dealer, insurance agency, or certified public accounting firm, and does not provide investment advisory, securities, insurance, tax, legal, audit, review, compilation, or attestation services. The monthly business review, the marketing verdict, the specimen brief and the financial statement analysis described on this website are management information prepared for the owner's internal decision-making. They are not an audit, review, compilation or attestation engagement performed under AICPA standards, and they express no opinion or assurance on any financial statement.</p>
       <p>Graham Miller is separately licensed as a registered representative and investment adviser representative of an unaffiliated broker-dealer and registered investment adviser. Those services are entirely separate from the bookkeeping and financial analysis services offered by GCM Enterprise LLC, which are not affiliated with, endorsed by, or supervised by any securities or insurance firm.</p>
       <p>GCM Enterprise LLC does not solicit securities, investment advisory, or insurance business, does not perform business valuations, and neither pays nor receives compensation for referrals of any kind.</p>
       <p>The specimen monthly business review shown on this website is a fictional company with invented figures, prepared for illustration. Analysis, models and projections are estimates based on stated assumptions and information provided; they are not guarantees of future results. Nothing on this website is an offer, solicitation, or recommendation.</p>
@@ -889,12 +816,12 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
 </footer>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://gcmenterprise.com/#gcm","name":"GCM Enterprise LLC","legalName":"GCM Enterprise LLC","disambiguatingDescription":"GCM Enterprise LLC — singular \"Enterprise\" — is a financial analysis, bookkeeping and monthly business review practice based in Virginia Beach, Virginia, founded and run by Graham Miller. It is a distinct company from any similarly named consulting firm.","description":"Financial analysis, risk analysis and monthly business review for owner-run companies from $1M to $100M in revenue. Bookkeeping and monthly reporting also available.","url":"https://gcmenterprise.com/","email":"graham@gcmenterprise.com","image":"https://gcmenterprise.com/og-image.png","founder":{"@id":"https://gcmenterprise.com/#graham"},"address":{"@type":"PostalAddress","addressLocality":"Virginia Beach","addressRegion":"VA","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Virginia Beach","containedInPlace":{"@type":"State","name":"Virginia"}},{"@type":"Country","name":"United States"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Monthly financial analysis and business review"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Financial statement analysis"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Bookkeeping and monthly reporting"}}]}}
+{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://gcmenterprise.com/#gcm","name":"GCM Enterprise LLC","legalName":"GCM Enterprise LLC","disambiguatingDescription":"GCM Enterprise LLC — singular \"Enterprise\" — is a financial analysis, bookkeeping and monthly business review practice based in Virginia Beach, Virginia, founded and run by Graham Miller. It is a distinct company from any similarly named consulting firm.","description":"Financial analysis, risk analysis and monthly business review for owner-run companies from $1M to $100M in revenue. Bookkeeping and monthly reporting also available.","url":"https://gcmenterprise.com/","email":"graham@gcmenterprise.com","image":"https://gcmenterprise.com/og-image.png","founder":{"@id":"https://gcmenterprise.com/#graham"},"address":{"@type":"PostalAddress","addressLocality":"Virginia Beach","addressRegion":"VA","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Virginia Beach","containedInPlace":{"@type":"State","name":"Virginia"}},{"@type":"State","name":"Virginia"},{"@type":"Country","name":"United States"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Monthly financial analysis and business review"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Financial statement analysis"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Bookkeeping and monthly reporting"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Marketing Verdict","url":"https://gcmenterprise.com/marketing/"}}]}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","@id":"https://gcmenterprise.com/#graham","name":"Graham Miller","jobTitle":"Principal","sameAs":["https://www.linkedin.com/in/graham-miller-47987337/"],"description":"Former bank SVP of Data & Analytics with ALCO and credit-risk experience, and an owner-operator. Runs the analysis and signs every brief.","email":"graham@gcmenterprise.com","url":"https://gcmenterprise.com/","image":"https://gcmenterprise.com/graham-web.jpg","worksFor":{"@id":"https://gcmenterprise.com/#gcm"},"address":{"@type":"PostalAddress","addressLocality":"Virginia Beach","addressRegion":"VA","addressCountry":"US"},"knowsAbout":["financial analysis","financial modeling","risk analysis","monthly business review","cash flow analysis","margin analysis","bookkeeping"]}
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this the same as hiring a fractional or outsourced CFO?","acceptedAnswer":{"@type":"Answer","text":"We're not a CPA firm, and we don't take a seat on your leadership team. We keep your books if you need us to, and we analyze them to show where your company is heading, so you can manage it with clear numbers instead of guesswork. Every month we sit down with you and walk through what we found: what moved, what it's worth, and what to watch next. Your CPA keeps handling tax."}},{"@type":"Question","name":"Do you replace my bookkeeper or CPA?","acceptedAnswer":{"@type":"Answer","text":"Your CPA stays. Tax and filings are theirs. Your bookkeeper can stay too; we'll work from their output. If you'd rather hand us the books, we'll keep them ourselves."}},{"@type":"Question","name":"What if my books are a mess?","acceptedAnswer":{"@type":"Answer","text":"Common. We'll tell you inside the first week what's usable. If the record can't support analysis yet, we can take the bookkeeping ourselves or work alongside your team to get it there."}},{"@type":"Question","name":"What do you need from me to start?","acceptedAnswer":{"@type":"Answer","text":"Access to your accounting file, the last twenty-four to thirty-six months of statements, and one conversation about how the business actually runs. For analysis-only engagements that access is read-only."}},{"@type":"Question","name":"What does the AI actually do?","acceptedAnswer":{"@type":"Answer","text":"Volume. It rebuilds the model, tests scenarios, reconciles the statements and watches every lever between closes. It doesn't decide — every finding is reviewed, corrected and signed by a human analyst before it reaches you."}},{"@type":"Question","name":"Is my financial data used to train AI?","acceptedAnswer":{"@type":"Answer","text":"No. Your financials are used to analyze your business and for nothing else."}},{"@type":"Question","name":"How long is the commitment?","acceptedAnswer":{"@type":"Answer","text":"The first engagement produces a deep analysis within fifteen days and stands on its own. After that it's a month-to-month cadence — most of the value compounds, but nothing locks you in."}},{"@type":"Question","name":"What size company is this for?","acceptedAnswer":{"@type":"Answer","text":"Owner-run companies from roughly $1M to $100M in revenue, in any sector. Below that the analysis usually outruns the decisions it would inform."}},{"@type":"Question","name":"Is GCM Enterprise an investment adviser?","acceptedAnswer":{"@type":"Answer","text":"No. GCM Enterprise LLC provides financial analysis, bookkeeping and reporting only. It isn't a registered investment adviser, broker-dealer or insurance agency — see the disclosures below."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this the same as hiring a fractional or outsourced CFO?","acceptedAnswer":{"@type":"Answer","text":"No. A fractional or outsourced CFO joins your leadership team and runs finance: cash, banks, lenders, the finance staff. I don't, and I never move money or sign for the company. I run the analysis a good CFO would run: your model rebuilt each month, risks named and tracked, recommendations priced in dollars, and a monthly meeting where I tell you what I'd do. You make the calls. If you need someone to run finance, hire a CFO; this also works alongside one."}},{"@type":"Question","name":"Do you replace my bookkeeper, controller or CPA?","acceptedAnswer":{"@type":"Answer","text":"No. Your CPA keeps tax and filings. Your bookkeeper or controller keeps the books and the monthly reporting; I take their close and model what comes next. I don't redo it: where a figure doesn't tie to bank, payroll or vendor payments, I list the item, its profit effect and the source, and they decide the entry. If you'd rather hand me the books, I can keep them."}},{"@type":"Question","name":"What if my books are a mess?","acceptedAnswer":{"@type":"Answer","text":"Common. Within the first week I tell you what's usable. If the books can't support the analysis yet, I can keep them myself or work alongside your bookkeeper to catch them up, quoted separately, and I tell you when the 15 days start. The specimen brief on this page found bookkeeping corrections that cut year-to-date profit by a net $41,150, and kept them apart from real performance."}},{"@type":"Question","name":"What do I get from the 30-minute call?","acceptedAnswer":{"@type":"Answer","text":"A plain read on what I'd look at first in your numbers, what read-only access it takes, and whether your books can support the analysis now or need catching up first. If it's a fit, I quote a fixed monthly fee after the call, typically $1,000 to $3,000 a month. Your first deep analysis arrives within 15 days of read-only access to books that can support it; if yours need catching up first, I tell you on the call when the 15 days start."}},{"@type":"Question","name":"What does the AI actually do?","acceptedAnswer":{"@type":"Answer","text":"One job: it drafts the written findings from figures the software has already calculated. It doesn't do arithmetic, doesn't log into your accounts, and doesn't decide anything. I check every finding and sign the brief."}},{"@type":"Question","name":"Who sees our books, and what happens to the data?","acceptedAnswer":{"@type":"Answer","text":"Me and the software, plus the AI provider that drafts findings from calculated figures. Analysis access is read-only and you can remove it at any time. Your data isn't used to train AI models: the model runs under commercial terms that exclude it."}},{"@type":"Question","name":"What does it cost, and how long is the commitment?","acceptedAnswer":{"@type":"Answer","text":"A fixed monthly fee, typically $1,000 to $3,000 a month depending on the size of the business and what you want answered. I quote it after the call once I've seen the state of your books, and it's never a share of anything. Any catch-up bookkeeping is quoted separately. There's no long-term contract: you can stop after the first deep analysis and keep it; after that it's month to month, with no lock-in."}},{"@type":"Question","name":"What size company is this for?","acceptedAnswer":{"@type":"Answer","text":"Owner-run companies from roughly $1M to $100M in revenue, in any sector. Below that the analysis usually outruns the decisions it would inform."}}]}</script>
 
 
 <script>
@@ -910,6 +837,10 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
     if(n&&window.gtag)window.gtag('event',n,{link_url:a.href});
   });
 })();
+</script>
+<script>
+/* print the whole specimen: open folded sections first */
+window.addEventListener('beforeprint',function(){document.querySelectorAll('details.doc-more').forEach(function(d){d.open=true});});
 </script>
 </body>
 </html>
