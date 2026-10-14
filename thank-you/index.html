@@ -41,7 +41,7 @@
 
 <style>
 :root{
-  --ink:#12161b; --black:#0d1115; --cream:#efe7d8; --brass:#c9a15c;
+  --ink:#12161b; --black:#0d1115; --cream:#efe7d8; --brass:#c9a15c; --brass-hover:#e6c288;
   --brass-lite:#ddbb7d; --mute-d:#97a0a9; --mute-d2:#8d949c;
   --serif:Fraunces,Georgia,"Times New Roman",serif;
   --sans:Archivo,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
@@ -53,13 +53,15 @@ body{background:var(--ink);color:var(--cream);font-family:var(--sans);
   font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;text-wrap:pretty;
   min-height:100vh;display:flex;flex-direction:column}
 a{color:var(--brass);text-decoration:none}
-a:hover{color:#e6c288}
+a:hover{color:var(--brass-hover)}
+.btn,.btn-o,a{transition:background-color .15s ease,color .15s ease,border-color .15s ease}
 :focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:2px}
 h1{font-family:var(--serif);font-weight:400;line-height:1.07;letter-spacing:-.018em;
   font-size:clamp(31px,5vw,56px);max-width:16ch}
 
 .skip{position:absolute;left:-9999px;top:0;background:var(--brass);color:var(--ink);
   padding:10px 16px;z-index:100;font-family:var(--mono);font-size:13px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .skip:focus{left:8px;top:8px}
 
 .hdr{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;

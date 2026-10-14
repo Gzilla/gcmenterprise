@@ -60,10 +60,10 @@
 :root{
   --ink:#12161b; --ink2:#171d24; --black:#0d1115; --forest:#2c4a3d;
   --paper:#ece3d3; --doc:#f4eee2;
-  --brass:#c9a15c; --brass-lite:#ddbb7d; --brass-mid:#a07c3a; --brass-ink:#765419;
+  --brass:#c9a15c; --brass-hover:#e6c288; --brass-lite:#ddbb7d; --brass-mid:#a07c3a; --brass-ink:#765419;
   --cream:#efe7d8; --mute-d:#97a0a9; --mute-d2:#8d949c; --mute-f:#c3cfc7;
   --body-p:#5c5342; --doc-mute:#6b6455; --doc-ink:#2a2620;
-  --green:#2c4a3d; --red:#8c3b2f;
+  --green:var(--forest); --red:#8c3b2f;
   --serif:Fraunces,Georgia,"Times New Roman",serif;
   --sans:Archivo,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
@@ -74,13 +74,15 @@ html{scroll-behavior:smooth}
 body{background:var(--ink);color:var(--cream);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;text-wrap:pretty}
 img{max-width:100%;display:block}
 a{color:var(--brass);text-decoration:none}
-a:hover{color:#e6c288}
+a:hover{color:var(--brass-hover)}
+.btn,.btn-o,a{transition:background-color .15s ease,color .15s ease,border-color .15s ease}
 h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.07;letter-spacing:-.014em}
 b,strong{font-weight:600}
 em{font-style:italic}
 table{border-collapse:collapse;width:100%}
 
 .skip{position:absolute;left:-9999px;top:0;background:var(--brass);color:var(--ink);padding:10px 16px;z-index:100;font-family:var(--mono);font-size:13px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .skip:focus{left:8px;top:8px}
 
 /* keyboard focus — explicit so it is identical in every browser, and
@@ -99,7 +101,7 @@ table{border-collapse:collapse;width:100%}
 
 /* buttons */
 .btn{display:inline-block;background:var(--brass);color:var(--ink);font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding:16px 26px;border-radius:2px}
-.btn:hover{background:#e6c288;color:var(--ink)}
+.btn:hover{background:var(--brass-hover);color:var(--ink)}
 .btn-o{display:inline-block;border:1px solid var(--brass);color:var(--brass);font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;padding:10px 16px;border-radius:2px}
 .btn-o:hover{background:rgba(201,161,92,.14);color:var(--brass)}
 .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:clamp(24px,3.4vw,40px)}
@@ -142,8 +144,8 @@ h3{font-size:clamp(19px,2.1vw,28px);line-height:1.1}
 .s-paper .fine{color:#635c4d}
 
 /* grids */
-.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:clamp(16px,2.4vw,32px);margin-top:clamp(30px,4.4vw,54px)}
-.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:clamp(12px,1.7vw,20px);margin-top:clamp(28px,4vw,48px)}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:clamp(16px,2.4vw,32px);margin-top:clamp(30px,4.4vw,54px)}
+.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,205px),1fr));gap:clamp(12px,1.7vw,20px);margin-top:clamp(28px,4vw,48px)}
 .stat{border-top:1px solid rgba(201,161,92,.24);padding-top:16px}
 .s-paper .stat{border-top-color:rgba(18,22,27,.18)}
 .stat b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.5vw,46px);line-height:1;color:var(--brass)}
@@ -177,14 +179,14 @@ h3{font-size:clamp(19px,2.1vw,28px);line-height:1.1}
 .bar-note{display:flex;flex-wrap:wrap;align-items:center;gap:.6em 1em;margin-top:clamp(16px,2.2vw,24px);border:1px solid var(--brass);border-radius:3px;padding:clamp(13px,1.6vw,19px) clamp(15px,2vw,25px);background:linear-gradient(90deg,rgba(201,161,92,.1),transparent);font-family:var(--mono);font-size:clamp(11.5px,1vw,14px);color:var(--mute-d)}
 .bar-note b{color:var(--cream);font-weight:500}
 .bar-note i{color:var(--brass);font-style:normal;font-size:16px}
-.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(20px,3vw,44px);align-items:center;margin-top:clamp(24px,3.2vw,38px)}
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(20px,3vw,44px);align-items:center;margin-top:clamp(24px,3.2vw,38px)}
 
 /* credentials */
 .creds{margin-top:clamp(22px,3.2vw,36px);border-top:1px solid rgba(201,161,92,.32)}
-.cred{display:grid;grid-template-columns:minmax(150px,.85fr) minmax(200px,1.15fr);gap:5px clamp(14px,2vw,32px);align-items:baseline;padding:clamp(11px,1.3vw,16px) 0;border-bottom:1px solid rgba(201,161,92,.32)}
+.cred{display:grid;grid-template-columns:minmax(min(100%,150px),.85fr) minmax(min(100%,200px),1.15fr);gap:5px clamp(14px,2vw,32px);align-items:baseline;padding:clamp(11px,1.3vw,16px) 0;border-bottom:1px solid rgba(201,161,92,.32)}
 .cred dt{font-family:var(--serif);font-size:clamp(16px,1.6vw,22px);line-height:1.12}
 .cred dd{font-family:var(--mono);font-size:clamp(12px,1vw,13.5px);line-height:1.45;color:var(--brass-lite)}
-.op-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(24px,4vw,56px);align-items:start}
+.op-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:clamp(24px,4vw,56px);align-items:start}
 .photo{border:1px solid rgba(201,161,92,.4);padding:8px;max-width:420px}
 .photo img{width:100%;height:auto}
 .photo-cap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;max-width:420px;margin-top:12px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-lite)}
@@ -194,7 +196,7 @@ h3{font-size:clamp(19px,2.1vw,28px);line-height:1.1}
 .photo-link a:hover{color:var(--cream);border-bottom-color:var(--cream)}
 
 /* faq */
-.faq{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(20px,2.8vw,44px);margin-top:clamp(30px,4.4vw,52px)}
+.faq{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(20px,2.8vw,44px);margin-top:clamp(30px,4.4vw,52px)}
 .faq-col{display:flex;flex-direction:column;gap:clamp(20px,2.4vw,28px)}
 .faq h3{font-weight:500;font-size:clamp(17px,1.8vw,22px);line-height:1.16}
 .faq p{font-size:14.5px;line-height:1.55;color:var(--body-p);margin-top:8px}
@@ -257,15 +259,20 @@ h3{font-size:clamp(19px,2.1vw,28px);line-height:1.1}
 .xax .cur{color:var(--green)}
 .doc-src{margin-top:26px;border-top:1px solid rgba(18,22,27,.22);padding-top:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-end}
 .doc-src p{font-size:12.5px;line-height:1.65;color:#6b6455;max-width:76ch;margin:0}
-.doc-conf{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-ink);white-space:nowrap}
-.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(16px,2.4vw,30px);margin-top:clamp(28px,3.8vw,46px)}
+.doc-conf{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-ink);white-space:nowrap}@media(max-width:400px){.doc-conf{white-space:normal;letter-spacing:.1em}}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:clamp(16px,2.4vw,30px);margin-top:clamp(28px,3.8vw,46px)}
 .notes h3{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);font-weight:400;line-height:1.4}
 .notes p{font-size:14px;line-height:1.5;color:var(--mute-d);margin-top:8px}
 
 /* teaser */
-.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(26px,4.6vw,68px);align-items:center}
+.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(26px,4.6vw,68px);align-items:center}
 .teaser{display:block;background:var(--doc);border-top:3px solid var(--brass);border-radius:2px;padding:clamp(18px,2.2vw,28px);box-shadow:0 30px 70px rgba(0,0,0,.5);color:var(--ink)}
 .teaser:hover{color:var(--ink)}
+.teaser{position:relative}
+.teaser-link{display:block;margin-top:15px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass-ink)}
+.teaser-link::after{content:"";position:absolute;inset:0}
+.teaser:focus-within{outline:2px solid var(--brass-ink);outline-offset:3px}
+
 .teaser-hd{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
 .teaser-hd b{font-family:var(--serif);font-weight:400;font-size:clamp(17px,1.7vw,21px);line-height:1.15}
 .teaser-hd span,.teaser-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass-ink)}
@@ -303,7 +310,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
 .doc-more{margin-top:26px}
 .doc-more>summary{cursor:pointer;list-style:none;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-ink);border-top:1px solid rgba(18,22,27,.18);padding-top:16px}
 .doc-more>summary::-webkit-details-marker{display:none}
-.doc-more>summary::after{content:" ↓"}
+.doc-more>summary::after{content:" <span aria-hidden="true">↓</span>"}
 .doc-more[open]>summary::after{content:" ↑"}
 .svc h3 a{color:inherit;border-bottom:1px solid rgba(201,161,92,.5)}
 @media print{
@@ -387,13 +394,13 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
       <p class="lead hero-lead rev">Each month I rebuild your financial model, track the risks, show where cash is heading and price each recommendation in dollars. First deep analysis within 15 days of read-only access.</p>
       <div class="cta-row rev">
         <a class="btn" href="https://calendly.com/grahammiller/consultation" data-ev="booking">Book a 30-minute call</a>
-        <a class="link-u" href="#brief">See a specimen brief ↓</a>
+        <a class="link-u" href="#brief">See a specimen brief <span aria-hidden="true">↓</span></a>
         <span class="cta-note">30 minutes · what I'd look at first in your numbers, whether your books are ready, and how the fixed fee is set</span>
       </div>
       <p class="strip rev">Signed by Graham Miller, former bank SVP&nbsp;·&nbsp;Typically $1,000–$3,000 a month, fixed&nbsp;·&nbsp;Month to month</p>
     </div>
     <div class="rev">
-      <a class="teaser" href="#brief">
+      <div class="teaser">
         <span class="teaser-hd"><b>Bluestone Creamery &amp; Coffee</b><span>Specimen</span></span>
         <span class="teaser-sub">Monthly Business Review · June 2026 · Café example; same brief in any sector</span>
         <span class="teaser-lbl">What the receipts showed</span>
@@ -404,8 +411,8 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
             <tr><td>Same days, both years</td><td style="color:#8c3b2f">−$28,900</td></tr>
           </tbody>
         </table>
-        <span class="teaser-go">Read the full specimen →</span>
-      </a>
+        <a class="teaser-link" href="#brief">Read the full specimen <span aria-hidden="true">→</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -427,6 +434,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
     <div class="rev">
       <p class="eyebrow">What You Get</p>
       <h2>I find the risks and price the improvements. You decide.</h2>
+      <p class="lead">Accounting keeps the record straight. Analysis finds what moved and what it's worth. Forecasting says where it lands. Those are normally three hires, three bills, and three people who don't talk to each other. I run them as one purpose-built system, against the same reconciled data, every month.</p>
     </div>
     <div class="g3 rev">
       <div class="beat">
@@ -491,16 +499,16 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
       <h2>Built in a bank. Sharpened by ownership.</h2>
       <p class="lead">I do the analysis, sign every brief, and meet with you each month. GCM isn't a software product or a pool of junior analysts.</p>
       <dl class="creds">
-        <div class="cred"><dt>Former bank SVP, Data &amp; Analytics</dt><dd>↳ led the function that turned institutional data into decisions</dd></div>
-        <div class="cred"><dt>ALCO &amp; Credit Risk</dt><dd>↳ balance-sheet, liquidity &amp; risk discipline at the committee level</dd></div>
-        <div class="cred"><dt>Owner-Operator</dt><dd>↳ I run this same playbook inside my own companies</dd></div>
+        <div class="cred"><dt>Former bank SVP, Data &amp; Analytics</dt><dd><span aria-hidden="true">↳</span> led the function that turned institutional data into decisions</dd></div>
+        <div class="cred"><dt>ALCO &amp; Credit Risk</dt><dd><span aria-hidden="true">↳</span> balance-sheet, liquidity &amp; risk discipline at the committee level</dd></div>
+        <div class="cred"><dt>Owner-Operator</dt><dd><span aria-hidden="true">↳</span> I run this same playbook inside my own companies</dd></div>
       </dl>
-      <p class="pull pull-i">Software does the arithmetic. The judgment comes from <b style="font-style:normal;color:var(--brass-lite)">someone who has carried the risk.</b></p>
+      <p class="pull pull-i">The system anchors what gets found. The judgment comes from <b style="font-style:normal;color:var(--brass-lite)">someone who has carried the risk.</b></p>
     </div>
     <div class="rev">
       <div class="photo"><img src="graham-web.jpg" width="760" height="950" alt="Graham Miller, GCM Enterprise LLC" loading="lazy" decoding="async" /></div>
       <p class="photo-cap"><b>Graham Miller</b><span>Virginia Beach, VA</span></p>
-      <p class="photo-link"><a href="https://www.linkedin.com/in/graham-miller-47987337/" target="_blank" rel="noopener noreferrer" data-ev="linkedin">View profile on LinkedIn ↗</a></p>
+      <p class="photo-link"><a href="https://www.linkedin.com/in/graham-miller-47987337/" target="_blank" rel="noopener noreferrer" data-ev="linkedin">View profile on LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in new tab)</span></a></p>
     </div>
   </div>
 </section>
@@ -531,7 +539,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
 
       <div class="doc-blk">
         <p class="doc-lbl">Performance Dashboard</p>
-        <div class="scroll">
+        <div class="scroll" tabindex="0" role="region" aria-label="Performance dashboard">
           <table>
             <thead>
               <tr><th scope="col">Metric</th><th scope="col">Current</th><th scope="col">Prior period</th><th scope="col">Trend</th><th scope="col">Status</th></tr>
@@ -591,7 +599,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
         <p>Prime cost — ingredients plus labor — is the standard measure of a food operation's engine room. Above 60% of revenue a concept struggles regardless of what else is done well; strong operators hold 55% or below. Bluestone spent most of 2025 above the caution line; every month of 2026 has been below it, and it has fallen every month since January. This near-sixteen-point improvement on falling comparable-day demand is why the same store that lost money in the first half of 2025 is solidly profitable now, and it is the foundation the second-location economics rest on.</p>
         <p>Ingredient cost runs roughly ten points below prior year in every month, verified against actual vendor payments: the business paid $22,140 less for food and supplies this quarter than the same quarter last year, on slightly higher sales, through a deliberate shift from broadline distribution to direct and specialty suppliers. The improvement is structural, and conservatively stated — the books record more cost than the payments support.</p>
         <p><b>The payroll question, answered.</b> The labor line carries three posting distortions — August 2025 inflated by last year's accrual errors, October 2025 understated by $26,400 of wages parked below the operating line, and March–April 2026 tangled by accrual reversals. After adjusting all three, the improvement is genuine and independently confirmed: the point-of-sale system shows the same 27 employees processed 9% more orders while payroll cash fell about 15% — shorter shifts and better scheduling, not headcount cuts. The true 2026 labor run-rate is roughly 26–28% of revenue; planning should use that figure, not the flattered 20–23% the raw books show for May and June.</p>
-        <div class="scroll">
+        <div class="scroll" tabindex="0" role="region" aria-label="H1 margin measures">
           <table>
             <thead>
               <tr><th scope="col">H1 measure (fees restored, payroll adjusted)</th><th scope="col">2025</th><th scope="col">2026</th><th scope="col">Change</th><th scope="col">Assessment</th></tr>
@@ -608,7 +616,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
 
       <div class="doc-blk">
         <p class="doc-lbl">Corrections Outstanding — July Close</p>
-        <div class="scroll">
+        <div class="scroll" tabindex="0" role="region" aria-label="Corrections outstanding">
           <table>
             <thead>
               <tr><th scope="col">Item</th><th scope="col">Profit effect</th><th scope="col">Status</th></tr>
@@ -628,7 +636,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
 
       <div class="doc-blk">
         <p class="doc-lbl">Forward Look — 30 To 90 Days</p>
-        <div class="scroll">
+        <div class="scroll" tabindex="0" role="region" aria-label="Forward look">
           <table>
             <thead>
               <tr><th scope="col">When</th><th scope="col">What</th><th scope="col">Why it matters</th></tr>
@@ -681,7 +689,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
       <div class="lever"><h3>Cash-flow cycle</h3><p>The gap between paying and getting paid.</p></div>
       <div class="lever"><h3>Capital</h3><p>What's invested — and what it must earn.</p></div>
     </div>
-    <p class="bar-note rev"><span>Move any lever</span><i>→</i><b>the model projects the impact</b><i>→</i><b>where you land in 6–12 months</b></p>
+    <p class="bar-note rev"><span>Move any lever</span><i aria-hidden="true">→</i><b>the model projects the impact</b><i aria-hidden="true">→</i><b>where you land in 6–12 months</b></p>
     <div class="split rev">
       <p class="pull" style="margin-top:0">This is why the sector doesn't change the method. On $5M of revenue, one point of margin is $50,000 a year.</p>
     </div>
@@ -755,7 +763,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
         <div><h3>Do you replace my bookkeeper, controller or CPA?</h3><p>No. Your CPA keeps tax and filings. Your bookkeeper or controller keeps the books and the monthly reporting; I take their close and model what comes next. I don't redo it: where a figure doesn't tie to bank, payroll or vendor payments, I list the item, its profit effect and the source, and they decide the entry. If you'd rather hand me the books, I can keep them.</p></div>
         <div><h3>What if my books are a mess?</h3><p>Common. Within the first week I tell you what's usable. If the books can't support the analysis yet, I can keep them myself or work alongside your bookkeeper to catch them up, quoted separately, and I tell you when the 15 days start. The specimen brief on this page found bookkeeping corrections that cut year-to-date profit by a net $41,150, and kept them apart from real performance.</p></div>
         <div><h3>What do I get from the 30-minute call?</h3><p>A plain read on what I'd look at first in your numbers, what read-only access it takes, and whether your books can support the analysis now or need catching up first. If it's a fit, I quote a fixed monthly fee after the call, typically $1,000 to $3,000 a month. Your first deep analysis arrives within 15 days of read-only access to books that can support it; if yours need catching up first, I tell you on the call when the 15 days start.</p></div>
-        <div><h3>What does the AI actually do?</h3><p>One job: it drafts the written findings from figures the software has already calculated. It doesn't do arithmetic, doesn't log into your accounts, and doesn't decide anything. I check every finding and sign the brief.</p></div>
+        <div><h3>What does the AI actually do?</h3><p>It runs the analysis. Each month the system rebuilds your financial model, reconciles the figures, and names every risk and opportunity it identifies — including the ones that contradict the headline. It doesn't log into your accounts, doesn't move anything, and doesn't decide. I review every finding, correct what's wrong, and sign the brief. You set the strategy.</p></div>
       </div>
       <div class="faq-col">
         <div><h3>Who sees our books, and what happens to the data?</h3><p>Me and the software, plus the AI provider that drafts findings from calculated figures. Analysis access is read-only and you can remove it at any time. Your data isn't used to train AI models: the model runs under commercial terms that exclude it.</p></div>
@@ -763,6 +771,10 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
         <div><h3>What size company is this for?</h3><p>Owner-run companies from roughly $1M to $100M in revenue, in any sector. Below that the analysis usually outruns the decisions it would inform.</p></div>
       </div>
     </div>
+      <div class="cta-row rev">
+        <a class="btn" href="https://calendly.com/grahammiller/consultation" data-ev="booking">Book a 30-minute call</a>
+        <span class="cta-note">30 minutes · month to month</span>
+      </div>
   </div>
 </section>
 
@@ -775,7 +787,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
         <div class="svc"><p class="n">01</p><div><h3>Bookkeeping</h3><p>Catch-up and monthly bookkeeping: books brought current, then closed on time every month, so the analysis has clean inputs.</p></div></div>
         <div class="svc"><p class="n">02</p><div><h3>Monthly Reporting</h3><p>Financial statements delivered on schedule, in a format you actually read and use.</p></div></div>
         <div class="svc"><p class="n">03</p><div><h3>Financial Statement Analysis</h3><p>Trend, margin and cash-flow analysis of existing statements — a lighter engagement than the full model.</p></div></div>
-        <div class="svc"><p class="n">04</p><div><h3><a href="/marketing/">Marketing Verdict →</a></h3><p>For companies with real ad spend: what Google and Meta claim, checked each month against what your books show was sold and kept. Same read-only access, same signature. On its own or alongside the monthly review, for its own fixed fee.</p></div></div>
+        <div class="svc"><p class="n">04</p><div><h3><a href="/marketing/">Marketing Verdict <span aria-hidden="true">→</span></a></h3><p>For companies with real ad spend: what Google and Meta claim, checked each month against what your books show was sold and kept. Same read-only access, same signature. On its own or alongside the monthly review, for its own fixed fee.</p></div></div>
       </div>
     </div>
   </div>
@@ -821,7 +833,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","@id":"https://gcmenterprise.com/#graham","name":"Graham Miller","jobTitle":"Principal","sameAs":["https://www.linkedin.com/in/graham-miller-47987337/"],"description":"Former bank SVP of Data & Analytics with ALCO and credit-risk experience, and an owner-operator. Runs the analysis and signs every brief.","email":"graham@gcmenterprise.com","url":"https://gcmenterprise.com/","image":"https://gcmenterprise.com/graham-web.jpg","worksFor":{"@id":"https://gcmenterprise.com/#gcm"},"address":{"@type":"PostalAddress","addressLocality":"Virginia Beach","addressRegion":"VA","addressCountry":"US"},"knowsAbout":["financial analysis","financial modeling","risk analysis","monthly business review","cash flow analysis","margin analysis","bookkeeping"]}
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this the same as hiring a fractional or outsourced CFO?","acceptedAnswer":{"@type":"Answer","text":"No. A fractional or outsourced CFO joins your leadership team and runs finance: cash, banks, lenders, the finance staff. I don't, and I never move money or sign for the company. I run the analysis a good CFO would run: your model rebuilt each month, risks named and tracked, recommendations priced in dollars, and a monthly meeting where I tell you what I'd do. You make the calls. If you need someone to run finance, hire a CFO; this also works alongside one."}},{"@type":"Question","name":"Do you replace my bookkeeper, controller or CPA?","acceptedAnswer":{"@type":"Answer","text":"No. Your CPA keeps tax and filings. Your bookkeeper or controller keeps the books and the monthly reporting; I take their close and model what comes next. I don't redo it: where a figure doesn't tie to bank, payroll or vendor payments, I list the item, its profit effect and the source, and they decide the entry. If you'd rather hand me the books, I can keep them."}},{"@type":"Question","name":"What if my books are a mess?","acceptedAnswer":{"@type":"Answer","text":"Common. Within the first week I tell you what's usable. If the books can't support the analysis yet, I can keep them myself or work alongside your bookkeeper to catch them up, quoted separately, and I tell you when the 15 days start. The specimen brief on this page found bookkeeping corrections that cut year-to-date profit by a net $41,150, and kept them apart from real performance."}},{"@type":"Question","name":"What do I get from the 30-minute call?","acceptedAnswer":{"@type":"Answer","text":"A plain read on what I'd look at first in your numbers, what read-only access it takes, and whether your books can support the analysis now or need catching up first. If it's a fit, I quote a fixed monthly fee after the call, typically $1,000 to $3,000 a month. Your first deep analysis arrives within 15 days of read-only access to books that can support it; if yours need catching up first, I tell you on the call when the 15 days start."}},{"@type":"Question","name":"What does the AI actually do?","acceptedAnswer":{"@type":"Answer","text":"One job: it drafts the written findings from figures the software has already calculated. It doesn't do arithmetic, doesn't log into your accounts, and doesn't decide anything. I check every finding and sign the brief."}},{"@type":"Question","name":"Who sees our books, and what happens to the data?","acceptedAnswer":{"@type":"Answer","text":"Me and the software, plus the AI provider that drafts findings from calculated figures. Analysis access is read-only and you can remove it at any time. Your data isn't used to train AI models: the model runs under commercial terms that exclude it."}},{"@type":"Question","name":"What does it cost, and how long is the commitment?","acceptedAnswer":{"@type":"Answer","text":"A fixed monthly fee, typically $1,000 to $3,000 a month depending on the size of the business and what you want answered. I quote it after the call once I've seen the state of your books, and it's never a share of anything. Any catch-up bookkeeping is quoted separately. There's no long-term contract: you can stop after the first deep analysis and keep it; after that it's month to month, with no lock-in."}},{"@type":"Question","name":"What size company is this for?","acceptedAnswer":{"@type":"Answer","text":"Owner-run companies from roughly $1M to $100M in revenue, in any sector. Below that the analysis usually outruns the decisions it would inform."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this the same as hiring a fractional or outsourced CFO?","acceptedAnswer":{"@type":"Answer","text":"No. A fractional or outsourced CFO joins your leadership team and runs finance: cash, banks, lenders, the finance staff. I don't, and I never move money or sign for the company. I run the analysis a good CFO would run: your model rebuilt each month, risks named and tracked, recommendations priced in dollars, and a monthly meeting where I tell you what I'd do. You make the calls. If you need someone to run finance, hire a CFO; this also works alongside one."}},{"@type":"Question","name":"Do you replace my bookkeeper, controller or CPA?","acceptedAnswer":{"@type":"Answer","text":"No. Your CPA keeps tax and filings. Your bookkeeper or controller keeps the books and the monthly reporting; I take their close and model what comes next. I don't redo it: where a figure doesn't tie to bank, payroll or vendor payments, I list the item, its profit effect and the source, and they decide the entry. If you'd rather hand me the books, I can keep them."}},{"@type":"Question","name":"What if my books are a mess?","acceptedAnswer":{"@type":"Answer","text":"Common. Within the first week I tell you what's usable. If the books can't support the analysis yet, I can keep them myself or work alongside your bookkeeper to catch them up, quoted separately, and I tell you when the 15 days start. The specimen brief on this page found bookkeeping corrections that cut year-to-date profit by a net $41,150, and kept them apart from real performance."}},{"@type":"Question","name":"What do I get from the 30-minute call?","acceptedAnswer":{"@type":"Answer","text":"A plain read on what I'd look at first in your numbers, what read-only access it takes, and whether your books can support the analysis now or need catching up first. If it's a fit, I quote a fixed monthly fee after the call, typically $1,000 to $3,000 a month. Your first deep analysis arrives within 15 days of read-only access to books that can support it; if yours need catching up first, I tell you on the call when the 15 days start."}},{"@type":"Question","name":"What does the AI actually do?","acceptedAnswer":{"@type":"Answer","text":"It runs the analysis. Each month the system rebuilds your financial model, reconciles the figures, and names every risk and opportunity it identifies — including the ones that contradict the headline. It doesn't log into your accounts, doesn't move anything, and doesn't decide. I review every finding, correct what's wrong, and sign the brief. You set the strategy."}},{"@type":"Question","name":"Who sees our books, and what happens to the data?","acceptedAnswer":{"@type":"Answer","text":"Me and the software, plus the AI provider that drafts findings from calculated figures. Analysis access is read-only and you can remove it at any time. Your data isn't used to train AI models: the model runs under commercial terms that exclude it."}},{"@type":"Question","name":"What does it cost, and how long is the commitment?","acceptedAnswer":{"@type":"Answer","text":"A fixed monthly fee, typically $1,000 to $3,000 a month depending on the size of the business and what you want answered. I quote it after the call once I've seen the state of your books, and it's never a share of anything. Any catch-up bookkeeping is quoted separately. There's no long-term contract: you can stop after the first deep analysis and keep it; after that it's month to month, with no lock-in."}},{"@type":"Question","name":"What size company is this for?","acceptedAnswer":{"@type":"Answer","text":"Owner-run companies from roughly $1M to $100M in revenue, in any sector. Below that the analysis usually outruns the decisions it would inform."}}]}</script>
 
 
 <script>

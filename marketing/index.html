@@ -50,10 +50,10 @@
 :root{
   --ink:#12161b; --ink2:#171d24; --black:#0d1115; --forest:#2c4a3d;
   --paper:#ece3d3; --doc:#f4eee2;
-  --brass:#c9a15c; --brass-lite:#ddbb7d; --brass-mid:#a07c3a; --brass-ink:#765419;
+  --brass:#c9a15c; --brass-hover:#e6c288; --brass-lite:#ddbb7d; --brass-mid:#a07c3a; --brass-ink:#765419;
   --cream:#efe7d8; --mute-d:#97a0a9; --mute-d2:#8d949c; --mute-f:#c3cfc7;
   --body-p:#5c5342; --doc-mute:#6b6455; --doc-ink:#2a2620;
-  --green:#2c4a3d; --red:#8c3b2f; --green-d:#7fae97; --red-d:#c78d76;
+  --green:var(--forest); --red:#8c3b2f; --green-d:#7fae97; --red-d:#c78d76;
   --serif:Fraunces,Georgia,"Times New Roman",serif;
   --sans:Archivo,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
@@ -63,12 +63,14 @@
 html{scroll-behavior:smooth}
 body{background:var(--ink);color:var(--cream);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;text-wrap:pretty}
 a{color:var(--brass);text-decoration:none}
-a:hover{color:#e6c288}
+a:hover{color:var(--brass-hover)}
+.btn,.btn-o,a{transition:background-color .15s ease,color .15s ease,border-color .15s ease}
 h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.07;letter-spacing:-.014em}
 b,strong{font-weight:600}
 table{border-collapse:collapse;width:100%}
 svg{display:block;width:100%;height:auto}
 .skip{position:absolute;left:-9999px;top:0;background:var(--brass);color:var(--ink);padding:10px 16px;z-index:100;font-family:var(--mono);font-size:13px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .skip:focus{left:8px;top:8px}
 :focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:2px}
 .s-paper :focus-visible,.doc :focus-visible,.teaser:focus-visible{outline-color:var(--brass-ink)}
@@ -83,7 +85,7 @@ svg{display:block;width:100%;height:auto}
 
 /* buttons */
 .btn{display:inline-block;background:var(--brass);color:var(--ink);font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding:16px 26px;border-radius:2px}
-.btn:hover{background:#e6c288;color:var(--ink)}
+.btn:hover{background:var(--brass-hover);color:var(--ink)}
 .btn-o{display:inline-block;border:1px solid var(--brass);color:var(--brass);font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;padding:10px 16px;border-radius:2px}
 .btn-o:hover{background:rgba(201,161,92,.14);color:var(--brass)}
 .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:clamp(24px,3.4vw,40px)}
@@ -121,9 +123,9 @@ h3{font-size:clamp(19px,2.1vw,28px);line-height:1.1}
 .strip{margin-top:clamp(30px,4.6vw,58px);padding-top:20px;border-top:1px solid rgba(201,161,92,.22);font-family:var(--mono);font-size:clamp(10.5px,.95vw,12px);letter-spacing:.24em;text-transform:uppercase;color:var(--mute-d2)}
 
 /* grids and blocks */
-.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:clamp(16px,2.4vw,32px);margin-top:clamp(30px,4.4vw,54px)}
-.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:clamp(12px,1.7vw,20px);margin-top:clamp(28px,4vw,48px)}
-.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3.6vw,56px);align-items:center;margin-top:clamp(24px,3.2vw,38px)}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:clamp(16px,2.4vw,32px);margin-top:clamp(30px,4.4vw,54px)}
+.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,205px),1fr));gap:clamp(12px,1.7vw,20px);margin-top:clamp(28px,4vw,48px)}
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(24px,3.6vw,56px);align-items:center;margin-top:clamp(24px,3.2vw,38px)}
 .stat{border-top:1px solid rgba(201,161,92,.24);padding-top:16px}
 .s-paper .stat{border-top-color:rgba(18,22,27,.18)}
 .stat b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.5vw,46px);line-height:1;color:var(--brass)}
@@ -146,7 +148,7 @@ h3{font-size:clamp(19px,2.1vw,28px);line-height:1.1}
 .card-f .kicker{color:var(--green-d)}
 
 /* three systems */
-.sys{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(12px,1.6vw,18px);margin-top:clamp(30px,4.4vw,52px)}
+.sys{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:clamp(12px,1.6vw,18px);margin-top:clamp(30px,4.4vw,52px)}
 .sys .card{position:relative}
 .sys .q{font-family:var(--serif);font-size:clamp(18px,1.8vw,23px);line-height:1.2;color:var(--cream);margin:.5em 0 .5em}
 .sys .says{margin-top:14px;padding-top:12px;border-top:1px dashed rgba(201,161,92,.3);font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--brass-lite)}
@@ -194,7 +196,7 @@ h3{font-size:clamp(19px,2.1vw,28px);line-height:1.1}
 .chip-y{background:rgba(201,161,92,.24);color:#7a5a12}
 .chip-r{background:rgba(140,59,47,.13);color:var(--red)}
 .chip-n{background:rgba(18,22,27,.08);color:var(--doc-mute)}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:rgba(18,22,27,.14);border:1px solid rgba(18,22,27,.14);margin-top:14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:1px;background:rgba(18,22,27,.14);border:1px solid rgba(18,22,27,.14);margin-top:14px}
 .kpi{background:var(--doc);padding:14px 16px}
 .kpi small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--doc-mute)}
 .kpi b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(22px,2.4vw,30px);line-height:1.1;margin-top:6px;color:var(--doc-ink)}
@@ -215,10 +217,10 @@ h3{font-size:clamp(19px,2.1vw,28px);line-height:1.1}
 
 .doc-src{margin-top:30px;border-top:1px solid rgba(18,22,27,.22);padding-top:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-end}
 .doc-src p{font-size:12.5px;line-height:1.65;color:#6b6455;max-width:76ch;margin:0}
-.doc-conf{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-ink);white-space:nowrap}
+.doc-conf{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-ink);white-space:nowrap}@media(max-width:400px){.doc-conf{white-space:normal;letter-spacing:.1em}}
 
 /* hero teaser */
-.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(26px,4.6vw,68px);align-items:center}
+.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(26px,4.6vw,68px);align-items:center}
 .teaser{display:block;background:var(--doc);border-top:3px solid var(--brass);border-radius:2px;padding:clamp(18px,2.2vw,28px);box-shadow:0 30px 70px rgba(0,0,0,.5);color:var(--ink)}
 .teaser:hover{color:var(--ink)}
 .teaser-hd{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
@@ -269,14 +271,14 @@ h3{font-size:clamp(19px,2.1vw,28px);line-height:1.1}
 
 
 /* how it works: steps and lanes */
-.steps{list-style:none;margin-top:clamp(30px,4.4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(18px,2.4vw,30px) clamp(18px,2.4vw,36px)}
+.steps{list-style:none;margin-top:clamp(30px,4.4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(18px,2.4vw,30px) clamp(18px,2.4vw,36px)}
 .steps li{display:flex;gap:16px;align-items:flex-start;border-top:1px solid rgba(201,161,92,.28);padding-top:16px}
 .steps .sn{flex:none;width:34px;height:34px;border:1px solid var(--brass);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;color:var(--brass)}
 .steps h3{font-size:clamp(18px,1.8vw,23px);margin:.35em 0 .35em}
 .steps p{font-size:14.5px;line-height:1.55;color:var(--mute-d)}
 .steps p b{color:var(--cream);font-weight:500}
 .steps .kicker{font-size:11px;line-height:1.5;color:var(--brass)}
-.lanes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;margin-top:clamp(30px,4.4vw,48px);background:rgba(201,161,92,.3);border:1px solid rgba(201,161,92,.3);border-radius:3px;overflow:hidden}
+.lanes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1px;margin-top:clamp(30px,4.4vw,48px);background:rgba(201,161,92,.3);border:1px solid rgba(201,161,92,.3);border-radius:3px;overflow:hidden}
 .lane{background:var(--ink);padding:clamp(16px,2vw,24px)}
 .lane-g{background:#14211c}
 .lane .lane-h{font-family:var(--serif);font-size:clamp(20px,2vw,26px);line-height:1.1;color:var(--cream);margin-bottom:10px}
@@ -301,7 +303,7 @@ h3{font-size:clamp(19px,2.1vw,28px);line-height:1.1}
 .st-bad{background:rgba(199,141,118,.16);color:var(--red-d)}
 
 /* faq */
-.faq{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(20px,2.8vw,44px);margin-top:clamp(30px,4.4vw,52px)}
+.faq{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(20px,2.8vw,44px);margin-top:clamp(30px,4.4vw,52px)}
 .faq-col{display:flex;flex-direction:column;gap:clamp(20px,2.4vw,28px)}
 .faq h3{font-weight:500;font-size:clamp(17px,1.8vw,22px);line-height:1.16}
 .faq p{font-size:14.5px;line-height:1.55;color:var(--body-p);margin-top:8px}
@@ -393,7 +395,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
       <p class="lead hero-lead rev">Every month I line up what Google and Meta claim, the orders that followed an ad click, and what your books show was sold and kept. You get a signed verdict: which ads to grow, which to hold and test, and what to fix. I don't run your ads or take a commission. First verdict within 15 days of read-only access, on your latest closed month.</p>
       <div class="cta-row rev">
         <a class="btn" href="https://calendly.com/grahammiller/consultation?utm_source=gcmenterprise&amp;utm_medium=website&amp;utm_campaign=marketing_verdict" data-ev="booking">Book a 30-minute call</a>
-        <a class="link-u" href="#verdict">See a specimen verdict ↓</a>
+        <a class="link-u" href="#verdict">See a specimen verdict <span aria-hidden="true">↓</span></a>
       </div>
       <p class="strip rev">30 minutes · your break-even, and which of your records can tie to your close</p>
     </div>
@@ -410,7 +412,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
           <span><span class="tb-l"><span>Break-even for this store</span><b>2.5x</b></span><span class="tb-t"><i class="hb-n" style="width:50%"></i></span></span>
         </span>
         <span class="teaser-v">On the dashboards, Meta ranked first. On the books, counting clicks only, it fell below break-even and Google carried the month. $25,000 of ads; break-even 2.5x from a 40% margin.</span>
-        <span class="teaser-go">Read the full specimen →</span>
+        <span class="teaser-go">Read the full specimen <span aria-hidden="true">→</span></span>
       </a>
     </div>
   </div>
@@ -444,7 +446,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
         <p class="you"><b>You get</b>your agency's results, checked against your books. Your agency keeps the work.</p>
       </div>
     </div>
-    <div class="join rev"><i>→</i><div><b>One signed verdict a month, in three steps.</b><span>Built for companies doing $1M–$100M a year that sell or take leads online, whether a team or an agency runs the ads.</span></div></div>
+    <div class="join rev"><i aria-hidden="true">→</i><div><b>One signed verdict a month, in three steps.</b><span>Built for companies doing $1M–$100M a year that sell or take leads online, whether a team or an agency runs the ads.</span></div></div>
   </div>
 </section>
 
@@ -459,7 +461,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
     <div class="g4 rev">
       <div class="beat"><p class="kicker">1 · See what's counted</p><h3>Is every sale counted once, and only once?</h3><p>I start with tracking you can see failing. Tags, the small pieces of code that tell Google or Meta a sale happened, break after a theme update, a checkout change or a new cookie banner. Platforms also take view-through credit: a sale credited to an ad the buyer saw but never clicked. And two platforms can claim the same order. That's default platform counting, not your team's mistake.</p></div>
       <div class="beat"><p class="kicker">2 · Check the books</p><h3>What was sold and kept, not what was claimed.</h3><p>Each store order or CRM lead is credited once, to the ad clicked before it, then tied to your month-end close. Orders claimed twice, view-through credit, and sales tax and refunds each come out as a separate step. In the specimen below: $110,000 claimed, $80,000 after an ad click, $65,000 sold and kept.</p></div>
-      <div class="beat"><p class="kicker">3 · Make the call</p><h3>Grow what clears break-even. Hold and test the rest.</h3><p>Break-even = $1 ÷ your margin. Margin is what $1 of kept sales leaves after product, shipping, payment fees and return costs; finance calls it contribution margin.</p><p class="chips-s">50% → 2.0x · 40% → 2.5x · 25% → 4.0x</p><p>Clear it on your books and the channel grows, in steps. Miss it and it's tested before any cut, never cut on a dashboard number alone.</p></div>
+      <div class="beat"><p class="kicker">3 · Make the call</p><h3>Grow what clears break-even. Hold and test the rest.</h3><p>Break-even = $1 ÷ your margin. Margin is what $1 of kept sales leaves after product, shipping, payment fees and return costs; finance calls it contribution margin.</p><p class="chips-s">50% <span aria-hidden="true">→</span> 2.0x · 40% <span aria-hidden="true">→</span> 2.5x · 25% <span aria-hidden="true">→</span> 4.0x</p><p>Clear it on your books and the channel grows, in steps. Miss it and it's tested before any cut, never cut on a dashboard number alone.</p></div>
       <div class="beat"><p class="kicker">Then · Keep score</p><h3>Did last month's changes happen, and did they pay?</h3><p>Every change gets an owner, a date and a rule for whether it worked, agreed before the money moves. Next month's verdict checks each one.</p></div>
     </div>
   </div>
@@ -512,7 +514,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
       <div class="doc-blk">
         <p class="doc-lbl">Profit · by channel</p>
         <h4>Judged by your books, the ranking flips.</h4>
-        <div class="scroll"><table>
+        <div class="scroll" tabindex="0" role="region" aria-label="Profit by channel"><table>
           <thead><tr><th>Channel</th><th>Spend</th><th>Dashboard</th><th>Your books (clicks only)</th><th>vs 2.5x</th><th style="text-align:left">Verdict</th></tr></thead>
           <tbody>
             <tr><td>Google</td><td>$15,000</td><td>4.0x</td><td>3.0x</td><td class="up">above</td><td class="as"><span class="chip chip-g vchip">Keep + grow</span>+$3,000 contribution after ads. Grow in $1,500 steps; keep each only if it adds $2.50 of kept sales per added $1.</td></tr>
@@ -528,9 +530,9 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
         <h4>A theme update on 29 September removed Meta's checkout pixel. Meta now sees 74% of store orders, down from 92%.</h4>
         <div class="dumb" role="img" aria-label="Purchases each platform's tag reported, as a share of store orders. Google tag via GA4: 94% from 1 to 28 September, 93% from 29 September to 7 October. Meta pixel plus server feed: 92% before, 74% after the pixel was removed.">
           <div class="db-ax"><span style="left:0%">70%</span><span style="left:50%">85%</span><span style="left:100%">100%</span></div>
-          <div class="db-row"><div class="db-l"><span>Google tag (via GA4)</span><b>94% → 93%</b></div>
+          <div class="db-row"><div class="db-l"><span>Google tag (via GA4)</span><b>94% <span aria-hidden="true">→</span> 93%</b></div>
             <div class="db-t"><i class="db-seg g" style="left:76.7%;width:3.3%"></i><i class="db-a" style="left:80%"></i><i class="db-b g" style="left:76.7%"></i></div></div>
-          <div class="db-row"><div class="db-l"><span>Meta pixel + server feed</span><b class="r">92% → 74%</b></div>
+          <div class="db-row"><div class="db-l"><span>Meta pixel + server feed</span><b class="r">92% <span aria-hidden="true">→</span> 74%</b></div>
             <div class="db-t"><i class="db-seg r" style="left:13.3%;width:60%"></i><i class="db-a" style="left:73.3%"></i><i class="db-b r" style="left:13.3%"></i></div></div>
           <div class="db-key"><span><i class="db-a"></i>1–28 Sep</span><span><i class="db-b g"></i>29 Sep – 7 Oct</span><span><i class="db-b r"></i>29 Sep – 7 Oct, pixel missing</span></div>
         </div>
@@ -539,7 +541,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
 
       <div class="doc-blk">
         <p class="doc-lbl">Execution · moves for October</p>
-        <div class="scroll"><table>
+        <div class="scroll" tabindex="0" role="region" aria-label="Execution moves for October"><table>
           <thead><tr><th>ID</th><th style="text-align:left">Move</th><th style="text-align:left">Owner · by</th><th style="text-align:left">What it decides</th><th style="text-align:left">How we'll know</th></tr></thead>
           <tbody>
             <tr><td class="id">OCT-01</td><td class="as">Restore the Meta checkout pixel removed by the theme update</td><td class="as">Web developer · 12 Oct</td><td class="as">Measurement</td><td class="as">Meta sees 90% or more of store orders again</td></tr>
@@ -600,7 +602,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
     </div>
     <div class="reg rev">
       <div class="reg-hd"><span>Move register · specimen</span><span class="hdr2">Re-checked every month. Every test has a budget, a deadline and an exit, agreed before the money moves.</span></div>
-      <div class="scroll"><table>
+      <div class="scroll" tabindex="0" role="region" aria-label="Watch register"><table>
         <thead><tr><th>ID</th><th>Move</th><th>Raised</th><th>Status</th><th>Result</th></tr></thead>
         <tbody>
           <tr><td class="m">OCT-01</td><td>Restore the Meta checkout pixel</td><td class="m">Oct</td><td><span class="st st-run">In progress</span></td><td class="s">Due 12 Oct. Done when Meta sees 90% or more of store orders; escalates if still under 85% on 19 Oct.</td></tr>
@@ -636,10 +638,14 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
         <div><h3>What systems do you work with?</h3><p>Google, Meta, TikTok, LinkedIn or Microsoft Ads; Shopify, WooCommerce or your CRM for leads; QuickBooks, Xero or your accounting team's monthly close. Each gets a read-only role; How it works, step 1 lists the common ones, and I send step-by-step instructions for the rest. If you also sell through Amazon, wholesale or stores, online sales tie to their own revenue line in your books; sales elsewhere aren't credited to ads unless a holdout test measures the lift.</p></div>
         <div><h3>Who sees our books, and what happens to the data?</h3><p>Me and the software, plus the AI provider that drafts findings from calculated figures (never your logins or ledger). Whoever runs your ads sees the draft findings, not your ledger. Every role is read-only and you can remove it at any time.</p></div>
         <div><h3>Is this an audit?</h3><p>No. It's management information for your own decisions. It isn't an audit, review or attestation, and it gives no assurance on your financial statements.</p></div>
-        <div><h3>What does AI do here, exactly?</h3><p>One job: it drafts the written findings from figures the software has already calculated. It doesn't do arithmetic, doesn't log into your accounts, and doesn't decide anything. I check every finding and sign the verdict. Your data isn't used to train AI models: the model runs under commercial terms that exclude training on your data.</p></div>
+        <div><h3>What does AI do here, exactly?</h3><p>It runs the analysis. Each month the system rebuilds the channel economics, reconciles platform numbers against your books, and names every risk and opportunity it identifies — including the ones that contradict the dashboard. It doesn't log into your accounts, doesn't move anything, and doesn't decide. I review every finding, correct what's wrong, and sign the verdict. Your data isn't used to train AI models: the model runs under commercial terms that exclude training on your data.</p></div>
         <div><h3>What does it cost, and how long is the commitment?</h3><p>A fixed monthly fee, typically $1,000 to $3,000 a month, quoted after the call once I know your channels and systems, and never a share of your ad spend. The first verdict stands on its own. After that it's month to month.</p></div>
       </div>
     </div>
+      <div class="cta-row rev">
+        <a class="btn" href="https://calendly.com/grahammiller/consultation?utm_source=gcmenterprise&amp;utm_medium=website&amp;utm_campaign=marketing_verdict" data-ev="booking">Book a 30-minute call</a>
+        <span class="cta-note">30 minutes · month to month</span>
+      </div>
   </div>
 </section>
 
