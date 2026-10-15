@@ -81,7 +81,7 @@ svg{display:block;width:100%;height:auto}
 .logo span{color:var(--brass)}
 .nav{display:flex;align-items:center;gap:clamp(10px,1.7vw,24px);flex-wrap:wrap;font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase}
 .nav a{color:var(--mute-d)}
-.nav a:hover{color:var(--brass)}
+.nav a:hover{color:var(--brass)}.nav-toggle{display:none;align-items:center;gap:9px;background:none;border:1px solid rgba(201,161,92,.35);color:var(--mute-d);font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding:9px;border-radius:2px;cursor:pointer;transition:color .18s ease,border-color .18s ease}.nav-toggle:hover{color:var(--brass-hover);border-color:var(--brass)}.nav-toggle:focus-visible{outline:2px solid var(--brass);outline-offset:3px}.nav-toggle i{display:block;width:15px;height:10px;position:relative;border-top:1px solid currentColor;border-bottom:1px solid currentColor}.nav-toggle i::before{content:"";position:absolute;top:3px;left:0;right:0;border-top:1px solid currentColor}
 
 /* buttons */
 .btn{display:inline-block;background:var(--brass);color:var(--ink);font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding:16px 26px;border-radius:2px}
@@ -323,6 +323,13 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
 @media (max-width:640px){
   .nav{gap:10px;font-size:10.5px}
   .nav .hide-s{display:none}
+  .nav a:not(.btn-o){display:none}
+  .hdr .nav-toggle:not([hidden]){display:inline-flex}
+  .hdr{gap:10px}
+  .hdr .logo span{display:none}
+  .hdr[data-nav="open"] .nav{width:100%;flex-direction:column;align-items:stretch;gap:0;padding-top:4px}
+  .hdr[data-nav="open"] .nav a:not(.btn-o){display:block;padding:11px 0;border-top:1px solid rgba(201,161,92,.18)}
+  .hdr[data-nav="open"] .nav .btn-o{margin-top:12px;align-self:flex-start}
   .cbar .bars i em{font-size:9px}
   .cbar{margin-right:62px}.cx{margin-right:62px}
 }
@@ -330,7 +337,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
   .rev{animation:none!important;opacity:1!important;transform:none!important}
   @page{margin:14mm}
   body{background:#fff;color:#000;font-size:10.5pt}
-  .hdr,.skip,.cta-row,.btn,.btn-o,.link-u,.teaser-go{display:none!important}
+  .hdr,.nav-toggle,.skip,.cta-row,.btn,.btn-o,.link-u,.teaser-go{display:none!important}
   section,footer,.doc,.teaser{background:#fff!important;color:#000!important;padding:0;margin:0 0 10mm}
   .glow-a::before,.glow-b::before{display:none}
   section{overflow:visible}
@@ -360,6 +367,7 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
 .doc .vchip{display:inline-block;margin-right:6px}
 .reg .hdr2{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:none;color:var(--mute-d)}
 </style>
+<noscript><style>@media (max-width:640px){.nav a:not(.btn-o){display:block}}</style></noscript>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VMT9JC91M1"></script>
 <script>
@@ -375,7 +383,8 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
 
 <header class="hdr">
   <a class="logo" href="/">GCM <span>Enterprise</span></a>
-  <nav class="nav" aria-label="Primary">
+  <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu" hidden><i aria-hidden="true"></i></button>
+      <nav class="nav" id="site-menu" aria-label="Primary">
     <a href="#what">The method</a>
     <a href="#verdict">Specimen</a>
     <a href="#method" class="hide-s">How it works</a>
@@ -697,6 +706,37 @@ footer{padding:clamp(38px,5.5vh,60px) var(--pad);background:var(--black);border-
     var n=names[a.getAttribute('data-ev')];
     if(n&&window.gtag)window.gtag('event',n,{link_url:a.href,page:'marketing'});
   });
+})();
+</script>
+
+<script>
+/* Mobile menu (<=640px) - same control as the home page. The button ships
+   hidden and is revealed here so a no-JS visitor never meets a dead control;
+   the noscript rule in the head leaves the links visible in that case. */
+(function(){
+  var hdr=document.querySelector('.hdr');
+  var btn=hdr&&hdr.querySelector('.nav-toggle');
+  var nav=document.getElementById('site-menu');
+  if(!hdr||!btn||!nav)return;
+  btn.hidden=false;
+  function set(open){
+    hdr.setAttribute('data-nav',open?'open':'closed');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  function isOpen(){return btn.getAttribute('aria-expanded')==='true';}
+  set(false);
+  btn.addEventListener('click',function(){set(!isOpen());});
+  nav.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&isOpen()){set(false);btn.focus();}
+  });
+  document.addEventListener('click',function(e){
+    if(isOpen()&&!hdr.contains(e.target))set(false);
+  });
+  var mq=window.matchMedia('(min-width:641px)');
+  function reset(){if(mq.matches)set(false);}
+  if(mq.addEventListener)mq.addEventListener('change',reset);
+  else if(mq.addListener)mq.addListener(reset);
 })();
 </script>
 </body>
